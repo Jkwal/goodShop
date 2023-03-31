@@ -1,1 +1,1 @@
-[GitHub Pages](https://jkwal.github.io/shop-TMS/)
+[GitHub Pages](https://jkwal.github.io/goodShop/)

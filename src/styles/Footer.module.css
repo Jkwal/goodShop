@@ -1,0 +1,20 @@
+.footer {
+    min-height: 100px;
+    padding: 1.5rem 2rem;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #5C6C6A;
+}
+
+.rights{
+    font-size:20px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    color: #AE9F94;
+}

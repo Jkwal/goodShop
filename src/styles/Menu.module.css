@@ -1,0 +1,10 @@
+.menu {
+    min-height: 50px;
+    border-bottom: 1px solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: #A7B6B4;
+}

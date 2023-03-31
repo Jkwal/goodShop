@@ -1,0 +1,30 @@
+.header {
+    min-height: 100px;
+    padding: 1.5rem 2rem;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #5C6C6A;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    font-style: italic;
+
+    text-decoration: none;
+
+    color: #AE9F94;
+}
+
+.search{
+    width: 250px;
+}
+
+.box{
+    height: 100px;
+    border: 1px solid black;
+}

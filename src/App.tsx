@@ -1,24 +1,25 @@
-import {Route, Routes} from 'react-router-dom';
-
 import {Header} from 'components/Header'
 import {Footer} from 'components/Footer'
 
-import {MainPage} from 'pages/MainPage'
-import {CategoryPage} from 'pages/CategoryPage'
-import {ProductPage} from 'pages/ProductPage'
-import {NotFound} from 'pages/NotFound'
+import AppRoutes from "AppRoutes";
+import {useAppDispatch} from "store";
+import {useEffect} from "react";
+import {loadCategories} from "./store";
+
 
 function App() {
+
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(loadCategories());
+    }, [dispatch])
+
     return (
         <>
             <Header/>
-            <main className="container content">
-                <Routes>
-                    <Route path='/' element={<MainPage/>}/>
-                    <Route path='category/:id' element={<CategoryPage/>}/>
-                    <Route path='good/:id' element={<ProductPage/>}/>
-                    <Route path='*' element={<NotFound/>}/>
-                </Routes>
+            <main className="container">
+                <AppRoutes/>
             </main>
             <Footer/>
         </>

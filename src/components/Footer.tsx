@@ -1,8 +1,9 @@
+import styles from 'styles/Footer.module.css';
 
-export function Footer() {
+export const Footer = () => {
     return (
-            <div className='footer'>
-               <h1>Footer</h1>
-            </div>
+        <section className={styles.footer}>
+            <p className={styles.rights}> Developed Yauheni Vial</p>
+        </section>
     );
 }
