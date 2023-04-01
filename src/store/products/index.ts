@@ -1,3 +1,3 @@
-export { reducer, actions, loadProducts } from "./slice";
+export {reducer, actions, loadProducts, loadSingleProduct} from "./slice";
 
-export {getAllProducts,getIsLoading} from './selectors';
+export {getAllProducts, getIsLoading, getSingleProduct} from './selectors';
