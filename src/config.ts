@@ -1,3 +1,5 @@
+
+
 export const ROUTES = {
     HOME: "/",
     BASKET: "/basket",
@@ -8,3 +10,4 @@ export const ROUTES = {
 };
 
 export const BASE_URL = "https://api.escuelajs.co/api/v1";
+

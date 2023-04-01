@@ -22,11 +22,6 @@ export const Header = () => {
                 GoodStore
             </Link>
 
-
-            <div className={styles.user}>
-                <div className={styles.username}>Guest</div>
-            </div>
-
             <form className={styles.form}>
                 <Search className={styles.search}
                         placeholder="input search text"
@@ -37,6 +32,12 @@ export const Header = () => {
 
                 {/*{false && <div className={styles.box}></div>}*/}
             </form>
+
+
+            <div className={styles.user}>
+                <div className={styles.username}>Guest</div>
+            </div>
+
 
             <Link
                 className={styles.basket}

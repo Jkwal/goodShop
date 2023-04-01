@@ -14,7 +14,6 @@ export function Menu() {
     return (
         <>
             <nav className={styles.menu}>
-
                 <ul className={styles.list}>
                     {
                         isLoading
@@ -28,8 +27,6 @@ export function Menu() {
                             ))
                     }
                 </ul>
-
-
             </nav>
         </>
 

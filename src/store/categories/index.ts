@@ -1,5 +1,5 @@
-export { reducer, actions, loadCategories } from "./slice";
+export { reducer, actions, loadCategories,loadProductsByCategory } from "./slice";
 
-export {getAllCategories,getIsLoading} from './selectors'
+export {getAllCategories,getIsLoading,getListProductsCategory} from './selectors'
 
 

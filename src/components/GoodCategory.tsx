@@ -1,14 +1,17 @@
-import {Cards} from 'components/Card'
+import {useSelector} from "react-redux";
+import {getListProductsCategory} from "../store";
 
-export function GoodCategory() {
+export const GoodCategory = () => {
+
+    const productsByCategory = useSelector(getListProductsCategory)
+
     return (
-        <div className='goodCategory'>
-            <div className="title">
-                <p style={{'fontStyle': 'italic'}}> Популярные товары </p>
+        <section className='goodCategory'>
+
+            <div className="category">
+                <p>Бестселлеры:</p>
             </div>
 
-            <ul className='bestgoods'>
-            </ul>
-        </div>
-    );
+        </section>
+    )
 }
