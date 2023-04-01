@@ -1,4 +1,4 @@
-import {useNavigate, useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import {useAppDispatch} from "../hooks";
 import {useSelector} from "react-redux";
 import {getSingleProduct,loadSingleProduct} from "../store";
@@ -10,8 +10,8 @@ export function ProductPage() {
 
     const dispatch = useAppDispatch();
 
-    const product = useSelector(getSingleProduct)
-    const {title,description,images,price} = product;
+    const product = useSelector(getSingleProduct);
+    const {title,images,price,description} = product
 
     useEffect(() => {
         id && dispatch(loadSingleProduct(id));
@@ -20,7 +20,6 @@ export function ProductPage() {
 
     return (
         <>
-
             <h1>{title}</h1>
             <Image
                 width={200}
