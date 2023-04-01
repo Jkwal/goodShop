@@ -9,6 +9,7 @@ import {NotFound} from "./pages/NotFound";
 import {LoginPage} from "./pages/LoginPage";
 import {RegistrationPage} from "./pages/RegistrationPage";
 import {BasketPage} from "./pages/BasketPage";
+import {GoodsPage} from "./pages/GoodsPage";
 
 
 const AppRoutes = () => (
@@ -19,6 +20,7 @@ const AppRoutes = () => (
         <Route path={ROUTES.BASKET} element={<BasketPage/>}/>
         <Route path={ROUTES.LOGIN} element={<LoginPage/>}/>
         <Route path={ROUTES.REGISTRATION} element={<RegistrationPage/>}/>
+        <Route path={ROUTES.GOODS} element={<GoodsPage/>}/>
         <Route path='*' element={<NotFound/>}/>
     </Routes>
 );

@@ -4,13 +4,13 @@ import {useSelector} from "react-redux";
 import styles from 'styles/Menu.module.css';
 
 import {Loader} from "./Loader";
-import {getAllCategories, getIsLoading} from "../store";
+import {getAllCategories, getIsLoadingCategories} from "../store";
 
 
 export function Menu() {
 
     const categories = useSelector(getAllCategories)
-    const isLoading = useSelector(getIsLoading)
+    const isLoading = useSelector(getIsLoadingCategories)
     return (
         <>
             <nav className={styles.menu}>

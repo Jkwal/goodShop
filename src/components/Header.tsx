@@ -22,6 +22,13 @@ export const Header = () => {
                 GoodStore
             </Link>
 
+            <Link
+                className={styles.logo}
+                to={ROUTES.GOODS}
+            >
+                All goods
+            </Link>
+
             <form className={styles.form}>
                 <Search className={styles.search}
                         placeholder="input search text"

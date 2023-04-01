@@ -6,8 +6,8 @@ export const getAllProducts = (store: RootStore): State['list'] => store.product
 export const getSingleProduct = (store: RootStore): State['singleProduct'] => store.products.singleProduct;
 
 
-export const getLoadStatus = (store: RootStore): State["loadStatus"] =>
+const getLoadStatus = (store: RootStore): State["loadStatus"] =>
     store.products.loadStatus;
 
-export const getIsLoading = (store: RootStore): boolean =>
+export const getIsLoadingProducts = (store: RootStore): boolean =>
     getLoadStatus(store) === LOAD_STATUSES.LOADING;

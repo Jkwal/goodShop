@@ -1,5 +1,5 @@
 import {NavLink, useNavigate, useParams} from "react-router-dom";
-import {Button, Card} from "antd";
+import {Button} from "antd";
 import {useAppDispatch} from "../hooks";
 import {getListProductsCategory, loadProductsByCategory} from "../store";
 import React, {useEffect} from "react";
@@ -27,23 +27,27 @@ export function CategoryPage() {
         <>
             <section className={styles.categoryPage}>
                 <Button type="primary" onClick={() => navigate(-1)}>Back</Button>
-                <h1>CategoryPage {id}</h1>
+                <h2>{products[0]?.category?.name}</h2>
                 <Space size={[8, 16]} wrap>
 
 
                     {
-                        products.map(({id, title, description, price, images}) => (
+                        products.map(({id, title, price, images}) => (
                             <div key={id}>
                                 <NavLink to={`/products/${id}`}>
 
                                     <Cards>
-                                        {title}
-                                        {description}
-                                        {price}
-                                        <Image
-                                            width={200}
-                                            src={`${images![0]}`}
-                                        />
+                                        {
+                                            images?.length
+                                                ? <Image
+                                                    width={200}
+                                                    src={`${images![0]}`}
+                                                />
+                                                : null
+                                        }
+                                        <p>{title}</p>
+                                        <p>{price}</p>
+
                                     </Cards>
 
                                 </NavLink>

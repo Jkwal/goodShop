@@ -1,9 +1,10 @@
-import { useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {useAppDispatch} from "../hooks";
 import {useSelector} from "react-redux";
-import {getSingleProduct,loadSingleProduct} from "../store";
+import {getSingleProduct, loadSingleProduct} from "../store";
 import {useEffect} from "react";
-import { Image } from 'antd';
+import {Image} from 'antd';
+
 export function ProductPage() {
 
     const {id} = useParams();
@@ -11,7 +12,7 @@ export function ProductPage() {
     const dispatch = useAppDispatch();
 
     const product = useSelector(getSingleProduct);
-    const {title,images,price,description} = product
+    const {title, images, price, description} = product
 
     useEffect(() => {
         id && dispatch(loadSingleProduct(id));
@@ -21,10 +22,7 @@ export function ProductPage() {
     return (
         <>
             <h1>{title}</h1>
-            <Image
-                width={200}
-                src={`${images![0]}`}
-            />
+            {images?.length ? <img src={`${images![0]}`} alt={title}/> : null}
             <p>{description}</p>
             <p>{price}</p>
         </>

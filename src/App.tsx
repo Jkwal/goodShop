@@ -17,6 +17,7 @@ function App() {
     useEffect(() => {
         dispatch(loadCategories());
         dispatch(loadProducts());
+
     }, [dispatch])
 
     return (

@@ -1,5 +1,4 @@
 import {Card} from 'antd';
-import {Image} from 'antd';
 import React from "react";
 
 type Cards = {
@@ -9,7 +8,7 @@ type Cards = {
 
 const CardsStyle: React.CSSProperties = {
     width: 250,
-    height:400,
+    height:300,
 };
 export function Cards({children}:Cards) {
     return (

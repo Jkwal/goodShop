@@ -1,5 +1,4 @@
 import {configureStore, combineReducers} from "@reduxjs/toolkit";
-import {useDispatch} from "react-redux";
 
 import {reducer as categoriesReducer} from './categories';
 import {reducer as productsReducer} from './products/slice'
