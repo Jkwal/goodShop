@@ -1,12 +1,13 @@
 import {Menu} from "components/Menu";
+import {Slider} from "components/Slider";
 import {GoodCategory} from "components/GoodCategory";
-import {Swiper} from "components/Swiper";
+
 
 export function MainPage() {
     return (
         <>
             <Menu/>
-            <Swiper/>
+            <Slider/>
             <GoodCategory/>
         </>
     )

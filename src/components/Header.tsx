@@ -1,7 +1,6 @@
 import {Link} from "react-router-dom";
 
 import {ROUTES} from "config";
-
 import styles from 'styles/Header.module.css';
 
 import {Basket} from "./Basket";

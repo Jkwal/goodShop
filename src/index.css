@@ -26,7 +26,6 @@ li {
 
 .swiper {
     min-height: 350px;
-    border-bottom: 1px solid black;
 
     display: flex;
     align-items: center;
@@ -37,6 +36,15 @@ li {
 
     background-color: rgba(77, 77, 77, 0.94);
 }
+
+div.swiper-slide{
+    height: 350px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .goodCategory {
     padding: 0.5rem;
