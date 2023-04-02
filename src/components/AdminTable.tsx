@@ -1,9 +1,9 @@
-import {Image, Table} from 'antd';
-import {useSelector} from "react-redux";
-import {getAllProducts} from "../store";
 import React from "react";
+import {Image, Table} from 'antd';
 import {NavLink} from "react-router-dom";
+import {useSelector} from "react-redux";
 
+import {getAllProducts} from "../store";
 
 
 const columns = [
@@ -43,7 +43,6 @@ const columns = [
         render: (image:string)=> <Image src={image[0]} width={120} alt='good' />
     }
 ]
-
 
 
 export const AdminTable = () => {

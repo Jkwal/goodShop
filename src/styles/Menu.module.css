@@ -1,7 +1,7 @@
 .menu {
     height: 50px;
 
-    background-color: #A7B6B4;
+    background-color: var(--light-green);
 }
 
 .list {

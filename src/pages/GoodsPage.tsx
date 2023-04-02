@@ -1,8 +1,12 @@
-import { loadProducts} from "../store";
-import {useAppDispatch} from "../hooks";
 import React, {useEffect} from "react";
-import {AdminTable} from "../components/AdminTable";
 import {Col, Row} from "antd";
+
+import {useAppDispatch} from "../hooks";
+import { loadProducts} from "../store";
+
+import {AdminTable} from "../components/AdminTable";
+
+import styles from 'styles/GoodsPage.module.css'
 
 export const GoodsPage = () => {
 
@@ -14,11 +18,14 @@ export const GoodsPage = () => {
     }, [dispatch])
 
     return (
-        <Row>
-            <Col span={12} offset={6}>
-                <AdminTable/>
-            </Col>
-        </Row>
+        <section className={styles.goodspage}>
+            <Row>
+                <Col span={12} offset={6}>
+                    <AdminTable/>
+                </Col>
+            </Row>
+        </section>
+
 
     )
 }

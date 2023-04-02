@@ -6,7 +6,6 @@ import {GoodCategory} from "components/GoodCategory";
 export function MainPage() {
     return (
         <>
-            <Menu/>
             <Slider/>
             <GoodCategory/>
         </>

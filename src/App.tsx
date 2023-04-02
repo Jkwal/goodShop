@@ -1,13 +1,12 @@
 import {useEffect} from "react";
-
-import {Header} from 'components/Header'
-import {Footer} from 'components/Footer'
-
 import AppRoutes from "AppRoutes";
 
 import {useAppDispatch} from "./hooks";
 import {loadCategories, loadProducts} from "./store";
 
+import {Header} from 'components/Header'
+import {Footer} from 'components/Footer'
+import {Menu} from "./components/Menu";
 
 
 function App() {
@@ -23,6 +22,7 @@ function App() {
     return (
         <>
             <Header/>
+            <Menu/>
             <main className="container">
                 <AppRoutes/>
             </main>

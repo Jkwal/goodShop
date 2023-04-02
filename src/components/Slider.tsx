@@ -14,14 +14,15 @@ export const Slider = () => {
             navigation
             pagination={{clickable: true}}
             scrollbar={{draggable: true}}
-            onSlideChange={() => console.log('slide change')}
+            onSlideChange={() => {
+            }}
             onSwiper={() => {
             }}
         >
-            <SwiperSlide>Реклама 1</SwiperSlide>
-            <SwiperSlide>Реклама 2</SwiperSlide>
-            <SwiperSlide>Реклама 3</SwiperSlide>
-            <SwiperSlide>Реклама 4</SwiperSlide>
+            <SwiperSlide>Advertising 1</SwiperSlide>
+            <SwiperSlide>Advertising 2</SwiperSlide>
+            <SwiperSlide>Advertising 3</SwiperSlide>
+            <SwiperSlide>Advertising 4</SwiperSlide>
         </Swiper>
     );
 };

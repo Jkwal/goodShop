@@ -1,3 +1,17 @@
 .categoryPage{
+    width: 75vw;
     padding: 1.5rem 2rem;
+    margin: 0 auto;
+}
+
+.header{
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-size: 30px;
+    margin-left: 30px;
 }

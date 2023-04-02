@@ -1,10 +1,11 @@
+import {Input} from 'antd';
 import {Link} from "react-router-dom";
 
-import {ROUTES} from "config";
+import {ROUTES} from "utils";
 import styles from 'styles/Header.module.css';
 
-import {Basket} from "./Basket";
-import {Input} from 'antd';
+import {Cart} from "./Cart";
+
 
 const {Search} = Input;
 
@@ -23,10 +24,10 @@ export const Header = () => {
             </Link>
 
             <Link
-                className={styles.logo}
+                className={styles.goods}
                 to={ROUTES.GOODS}
             >
-                All goods
+                All goods for Admin
             </Link>
 
             <form className={styles.form}>
@@ -50,7 +51,7 @@ export const Header = () => {
                 className={styles.basket}
                 to={ROUTES.BASKET}
             >
-                <Basket/>
+                <Cart/>
             </Link>
 
         </section>

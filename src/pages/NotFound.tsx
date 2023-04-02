@@ -1,7 +1,9 @@
-import {Button, Result} from 'antd';
-import {ROUTES} from "../config";
 import React from "react";
 import {Link} from "react-router-dom";
+import {Button, Result} from 'antd';
+
+import {ROUTES} from "../utils";
+
 
 export const NotFound = () => (
     <Result

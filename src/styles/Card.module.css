@@ -1,0 +1,21 @@
+.image {
+    margin-bottom: 20px;
+
+    border: 1px solid black;
+}
+
+.info {
+    padding: 5px;
+
+    border: 1px solid var(--dark);
+}
+
+.title {
+    margin-bottom: 20px;
+
+    font-size: 15px;
+}
+
+.price {
+    font-size: 30px;
+}

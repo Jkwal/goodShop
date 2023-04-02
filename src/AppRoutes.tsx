@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 
-import {ROUTES} from "./config";
+import {ROUTES} from "./utils";
 
 import {MainPage} from "./pages/MainPage";
 import {CategoryPage} from "./pages/CategoryPage";
@@ -8,7 +8,7 @@ import {ProductPage} from "./pages/ProductPage";
 import {NotFound} from "./pages/NotFound";
 import {LoginPage} from "./pages/LoginPage";
 import {RegistrationPage} from "./pages/RegistrationPage";
-import {BasketPage} from "./pages/BasketPage";
+import {CartPage} from "./pages/CartPage";
 import {GoodsPage} from "./pages/GoodsPage";
 
 
@@ -17,7 +17,7 @@ const AppRoutes = () => (
         <Route path={ROUTES.HOME} element={<MainPage/>}/>
         <Route path={ROUTES.CATEGORY} element={<CategoryPage/>}/>
         <Route path={ROUTES.PRODUCT} element={<ProductPage/>}/>
-        <Route path={ROUTES.BASKET} element={<BasketPage/>}/>
+        <Route path={ROUTES.BASKET} element={<CartPage/>}/>
         <Route path={ROUTES.LOGIN} element={<LoginPage/>}/>
         <Route path={ROUTES.REGISTRATION} element={<RegistrationPage/>}/>
         <Route path={ROUTES.GOODS} element={<GoodsPage/>}/>

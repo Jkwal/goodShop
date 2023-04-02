@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
 
-    background-color: #5C6C6A;
+    background-color: var(--dark-green);
 }
 
 .logo {
@@ -17,7 +17,12 @@
 
     text-decoration: none;
 
-    color: #AE9F94;
+    color: var(--light-brown);
+}
+
+.goods{
+    font-size: 25px;
+    color: black;
 }
 
 .search{

@@ -1,13 +1,17 @@
-import {NavLink, useNavigate, useParams} from "react-router-dom";
-import {Button} from "antd";
-import {useAppDispatch} from "../hooks";
-import {getListProductsCategory, loadProductsByCategory} from "../store";
 import React, {useEffect} from "react";
 import {useSelector} from "react-redux";
-import {Image} from 'antd';
+import {NavLink, useNavigate, useParams} from "react-router-dom";
+
+import {Button} from "antd";
 import {Space} from "antd/lib";
-import {Cards} from "../components/Card";
+
+import {useAppDispatch} from "../hooks";
+import {getListProductsCategory, loadProductsByCategory} from "../store";
+
 import styles from 'styles/CategoryPage.module.css';
+
+import {CardGood} from "../components/Card";
+
 
 export function CategoryPage() {
 
@@ -26,37 +30,26 @@ export function CategoryPage() {
     return (
         <>
             <section className={styles.categoryPage}>
-                <Button type="primary" onClick={() => navigate(-1)}>Back</Button>
-                <h2>{products[0]?.category?.name}</h2>
-                <Space size={[8, 16]} wrap>
 
+                <div className={styles.header}>
+                    <Button ghost onClick={() => navigate(-1)}>Back</Button>
 
+                    <h2 className={styles.title} >{products[0]?.category?.name}</h2>
+                </div>
+
+                <Space size={[20, 20]} wrap>
                     {
                         products.map(({id, title, price, images}) => (
                             <div key={id}>
                                 <NavLink to={`/products/${id}`}>
 
-                                    <Cards>
-                                        {
-                                            images?.length
-                                                ? <Image
-                                                    width={200}
-                                                    src={`${images![0]}`}
-                                                />
-                                                : null
-                                        }
-                                        <p>{title}</p>
-                                        <p>{price}</p>
-
-                                    </Cards>
+                                    <CardGood title={title} price={price} images={`${images![0]}`}/>
 
                                 </NavLink>
                             </div>
                         ))
                     }
-
                 </Space>
-
             </section>
         </>
     );

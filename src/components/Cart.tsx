@@ -1,16 +1,15 @@
-import styles from 'styles/Basket.module.css';
-
-import {ShoppingTwoTone} from '@ant-design/icons';
 import {Badge} from "antd";
+import {ShoppingTwoTone} from '@ant-design/icons';
 
-export function Basket() {
+import styles from 'styles/Cart.module.css';
+
+
+export function Cart() {
     return (
-        <ul className={styles.basket}>
-            <a href="#">
+        <ul className={styles.cart}>
                 <Badge count={6} >
                     <ShoppingTwoTone twoToneColor="#AE9F94" style={{'fontSize':'3rem'}}/>
                 </Badge>
-            </a>
         </ul>
     );
 }

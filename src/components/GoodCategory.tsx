@@ -1,20 +1,15 @@
-import {useSelector} from "react-redux";
-import {getListProductsCategory, loadProductsByCategory} from "../store";
 import React, {useEffect} from "react";
-import {useAppDispatch} from "../hooks";
+import {useSelector} from "react-redux";
 import {NavLink} from "react-router-dom";
-import {Cards} from "./Card";
-import {Image} from "antd";
 import {Space} from "antd/lib";
 
-function getRandomInt(min: number, max: number) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min
-}
+import {CardGood} from "./Card";
+import styles from 'styles/GoodCategory.module.css';
 
-const randomNumber = getRandomInt(2, 5)
-console.log(randomNumber)
+import {randomNumber} from "../utils";
+import {useAppDispatch} from "../hooks";
+
+import {getListProductsCategory, loadProductsByCategory} from "../store";
 
 
 export const GoodCategory = () => {
@@ -24,33 +19,35 @@ export const GoodCategory = () => {
     const productsByCategory = useSelector(getListProductsCategory);
 
     useEffect(() => {
-        dispatch(loadProductsByCategory("" + randomNumber));
+        dispatch(loadProductsByCategory(String(randomNumber)));
     }, [dispatch])
 
+
     return (
-        <section className='goodCategory'>
-            <h2>{productsByCategory[0]?.category?.name}</h2>
+        <section className={styles.goodCategory}>
+
+            <div className={styles.info}>
+                <h2 className={styles.heading}>Bestsellers from </h2>
+                <NavLink to={`/categories/${productsByCategory[0]?.category?.id}`}>
+                    <p className={styles.subHeading}>
+                        {productsByCategory[0]?.category?.name}
+                    </p>
+                </NavLink>
+
+            </div>
+
             <Space size={[8, 16]} wrap>
                 {
                     productsByCategory.map(({id, price, title, images}) => (
                         <div key={id}>
-
                             <NavLink to={`/products/${id}`}>
-                                <Cards>
-                                    {
-                                        images?.length
-                                            ? <Image
-                                                width={200}
-                                                src={`${images![0]}`}
-                                            />
-                                            : null
-                                    }
-                                    <p>{title}</p>
-                                    <p>{price}</p>
-                                </Cards>
+
+                                <CardGood title={title} price={price} images={`${images![0]}`}/>
+
                             </NavLink>
+
                         </div>
-                    ))
+                    )).slice(0, 14)
                 }
             </Space>
         </section>
