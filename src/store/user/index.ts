@@ -1,2 +1,1 @@
-export {addItemToCart}from './slice';
-export {userReducer} from './slice'
+export {userReducer, createUser, addItemToCart} from './slice'

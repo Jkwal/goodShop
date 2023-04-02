@@ -1,5 +1,5 @@
 import {Input} from 'antd';
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 import {ROUTES} from "utils";
 import styles from 'styles/Header.module.css';
@@ -8,6 +8,7 @@ import {Cart} from "./Cart";
 
 
 const {Search} = Input;
+
 
 export const Header = () => {
 
@@ -27,7 +28,7 @@ export const Header = () => {
                 className={styles.goods}
                 to={ROUTES.GOODS}
             >
-                All goods for Admin
+                Admin panel
             </Link>
 
             <form className={styles.form}>
@@ -41,10 +42,11 @@ export const Header = () => {
                 {/*{false && <div className={styles.box}></div>}*/}
             </form>
 
-
-            <div className={styles.user}>
-                <div className={styles.username}>Guest</div>
-            </div>
+            <NavLink to={ROUTES.LOGIN}>
+                <div className={styles.login}>
+                    <div className={styles.username}>Log in</div>
+                </div>
+            </NavLink>
 
 
             <Link

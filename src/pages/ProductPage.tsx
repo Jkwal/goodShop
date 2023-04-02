@@ -29,45 +29,41 @@ export function ProductPage() {
 
 
     return (
-        <>
-            <section className={styles.categoryPage}>
-                <div className={styles.header}>
-                    <Button ghost onClick={() => navigate(-1)}>Back</Button>
+        <section className={styles.categoryPage}>
+            <div className={styles.header}>
+                <Button ghost onClick={() => navigate(-1)}>Back</Button>
 
-                    <h2 className={styles.heading} >{category?.name}</h2>
+                <h2 className={styles.heading} >{category?.name}</h2>
+            </div>
+
+            <div className={styles.content}>
+
+                <div className={styles.info}>
+                    <h2 className={styles.title}>{title}</h2>
+                    <p className={styles.description}>{description}</p>
+
+                    <div className={styles.wrapper}>
+
+                        <Button className={styles.button} onClick={addToCart}>
+                            Add to cart
+                        </Button>
+
+
+                        <p className={styles.price}>{price}$</p>
+                    </div>
+                </div>
+                <div className={styles.containerImage}>
+                    {
+                        images?.length
+                            ? images.map((img) => (
+                                <Image className={styles.image} src={`${img}`} alt={title}/>))
+                            : null
+                    }
                 </div>
 
-                <div className={styles.content}>
+            </div>
 
-                    <div className={styles.info}>
-                        <h2 className={styles.title}>{title}</h2>
-                        <p className={styles.description}>{description}</p>
-
-                        <div className={styles.wrapper}>
-
-                            <Button className={styles.button} onClick={addToCart}>
-                                Add to cart
-                            </Button>
-
-
-                            <p className={styles.price}>{price}$</p>
-                        </div>
-                    </div>
-                    <div className={styles.containerImage}>
-                        {
-                            images?.length
-                                ? images.map((img) => (
-                                    <Image className={styles.image} src={`${img}`} alt={title}/>))
-                                : null
-                        }
-                    </div>
-
-                </div>
-
-            </section>
-
-
-        </>
+        </section>
 
 
     )

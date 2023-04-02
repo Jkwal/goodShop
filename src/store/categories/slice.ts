@@ -12,7 +12,7 @@ export const loadCategories = createAsyncThunk(
     `${SLICE_NAME}/loadCategories`,
     async (_, thunkAPI) => {
         try {
-            const res = await axios(`${BASE_URL}/categories`);
+            const res = await axios(`${BASE_URL}/${SLICE_NAME}`);
             return res.data;
         } catch (err) {
             return thunkAPI.rejectWithValue(err);
@@ -24,7 +24,7 @@ export const loadProductsByCategory = createAsyncThunk(
     `${SLICE_NAME}/loadProductsByCategory`,
     async (categoryID:string, thunkAPI) => {
         try {
-            const res = await axios(`https://api.escuelajs.co/api/v1/categories/${categoryID}/products`);
+            const res = await axios(`https://api.escuelajs.co/api/v1/${SLICE_NAME}/${categoryID}/products`);
             return res.data;
         } catch (err) {
             return thunkAPI.rejectWithValue(err);

@@ -1,7 +1,6 @@
 import axios from "axios";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-
 import {BASE_URL} from "utils"
 import {LOAD_STATUSES, Product} from "types";
 
@@ -24,7 +23,7 @@ export const loadSingleProduct = createAsyncThunk(
     `${SLICE_NAME}/loadSingleProduct`,
     async (id:string, thunkAPI) => {
         try {
-            const res = await axios(`https://api.escuelajs.co/api/v1/products/${id}`);
+            const res = await axios(`${BASE_URL}/${SLICE_NAME}/${id}`);
             return res.data;
         } catch (err) {
             return thunkAPI.rejectWithValue(err);
