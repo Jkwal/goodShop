@@ -47,7 +47,7 @@ export const GoodCategory = () => {
                             </NavLink>
 
                         </div>
-                    )).slice(0, 14)
+                    )).slice(0, 12)
                 }
             </Space>
         </section>

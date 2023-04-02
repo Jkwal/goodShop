@@ -53,7 +53,9 @@ const initialState: State = {
 const {reducer, actions: sliceActions} = createSlice({
     name: SLICE_NAME,
     initialState,
-    reducers: {},
+    reducers: {
+
+    },
     extraReducers: (builder) => {
         builder.addCase(loadProducts.pending, (state) => {
             state.loadStatus = LOAD_STATUSES.LOADING;

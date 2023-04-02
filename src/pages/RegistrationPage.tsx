@@ -56,6 +56,7 @@ export function RegistrationPage() {
                            value={values.name}
                            placeholder="Enter your name"
                            onChange={handleChange}
+                           autoComplete="off"
                            required/>
 
                     <Input className={styles.email}
@@ -65,6 +66,7 @@ export function RegistrationPage() {
                            value={values.email}
                            placeholder="Enter your email"
                            onChange={handleChange}
+                           autoComplete="off"
                            required/>
 
                     <Input.Password className={styles.password}
@@ -74,6 +76,7 @@ export function RegistrationPage() {
                                     value={values.password}
                                     placeholder="Enter your password"
                                     onChange={handleChange}
+                                    autoComplete="off"
                                     required/>
 
                     <Input className={styles.avatar}
@@ -83,6 +86,7 @@ export function RegistrationPage() {
                            value={values.avatar}
                            placeholder="Your avatar"
                            onChange={handleChange}
+                           autoComplete="off"
                            required/>
 
                     <div className={styles.wrapper}>
@@ -95,8 +99,11 @@ export function RegistrationPage() {
                 </form>
 
             </div>
-            <p>Можно скопировать эту ссылку для аватара:</p><br/>
-            <p>https://api.lorem.space/image/face?w=640&h=480&r=867</p>
+            <div style={{width:"30vw", margin: "0 auto"}}>
+                <p>Можно скопировать эту ссылку для аватара:</p><br/>
+                <p>https://api.lorem.space/image/face?w=640&h=480&r=867</p>
+            </div>
+
 
         </section>
     );

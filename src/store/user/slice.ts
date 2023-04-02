@@ -2,7 +2,10 @@ import axios from "axios";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {BASE_URL} from "utils";
 
+import {CurrentUser} from "../../types/currentUser";
+
 const SLICE_NAME = "users";
+
 
 export const createUser = createAsyncThunk(
     `${SLICE_NAME}/createUser`,
@@ -19,7 +22,7 @@ export const createUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk(
     `${SLICE_NAME}/loginUser`,
-    async (payload:any, thunkAPI) => {
+    async (payload: any, thunkAPI) => {
         try {
             const res = await axios.post(`${BASE_URL}/auth/login`, payload);
             const login = await axios(`${BASE_URL}/auth/profile`, {
@@ -36,14 +39,21 @@ export const loginUser = createAsyncThunk(
 );
 
 
+export interface State {
+    currentUser: CurrentUser,
+    cart: [],
+    isAuth: boolean,
+}
+
+const initialState: State = {
+    currentUser: null as any,
+    cart: [],
+    isAuth: false,
+}
+
 const userSlice = createSlice({
     name: "user",
-    initialState: {
-        currentUser: null,
-        cart: [],
-        isLoading: false,
-        isAuth: false,
-    },
+    initialState,
     reducers: {
         addItemToCart: (state, {payload}) => {
             let newCart: any = [...state.cart];
@@ -59,6 +69,10 @@ const userSlice = createSlice({
 
             state.cart = newCart;
         },
+        logOut: (state) => {
+            state.currentUser = Object.assign({});
+            state.isAuth = false;
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(createUser.fulfilled, (state, {payload}) => {
@@ -73,5 +87,5 @@ const userSlice = createSlice({
 });
 
 export const userReducer = userSlice.reducer;
-export const {addItemToCart} = userSlice.actions;
+export const {addItemToCart, logOut} = userSlice.actions;
 

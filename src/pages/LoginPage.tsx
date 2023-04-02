@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {NavLink, useNavigate} from "react-router-dom";
 import {Button, Input} from "antd";
 
@@ -7,22 +7,30 @@ import {ROUTES} from "../utils";
 
 import {useAppDispatch} from "../hooks";
 import styles from "../styles/LoginPage.module.css";
-import {loginUser} from "../store";
+import {getUser, loginUser} from "../store";
+import {useSelector} from "react-redux";
 
 export function LoginPage() {
 
     const dispatch = useAppDispatch();
+    const user = useSelector(getUser)
 
     const [values, setValues] = useState({
         email: "",
-        password:"",
+        password: "",
     });
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.preventDefault();
         setValues({...values, [e.target.name]: e.target.value});
     };
 
+    const handleClear = () => setValues({email: "", password: ""})
+
+    useEffect(()=>{
+        handleClear()
+    },[user])
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -56,6 +64,7 @@ export function LoginPage() {
                         value={values.email}
                         placeholder="Enter your email"
                         onChange={handleChange}
+                        autoComplete="off"
                         required/>
 
                     <Input.Password className={styles.password}
@@ -65,14 +74,15 @@ export function LoginPage() {
                                     value={values.password}
                                     placeholder="Enter your password"
                                     onChange={handleChange}
+                                    autoComplete="off"
                                     required/>
 
                     <div className={styles.wrapper}>
 
-                        <Button
-                            className={styles.button}
-                            ghost
-                            htmlType="submit">
+                        <Button className={styles.button}
+                                htmlType="submit"
+                                type="primary"
+                        >
                             Log In
                         </Button>
 
@@ -80,8 +90,8 @@ export function LoginPage() {
 
                             <p>Don't have an account?</p>
                             <NavLink to={ROUTES.REGISTRATION}>
-                                <Button
-                                    className={styles.button}>
+                                <Button className={styles.button}
+                                        ghost>
                                     Sign Up
                                 </Button>
                             </NavLink>
