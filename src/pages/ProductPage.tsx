@@ -56,7 +56,7 @@ export function ProductPage() {
                     {
                         images?.length
                             ? images.map((img) => (
-                                <Image className={styles.image} src={`${img}`} alt={title}/>))
+                                <Image key={img} className={styles.image} src={`${img}`} alt={title}/>))
                             : null
                     }
                 </div>

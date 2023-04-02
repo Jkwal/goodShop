@@ -1,5 +1,5 @@
 .RegistrationPage {
-    padding: 1.5rem;
+    padding: 1.5rem 0 4rem 0;
 }
 
 .header {
@@ -19,7 +19,7 @@
 }
 
 .content {
-    width: 50vw;
+    width: 30vw;
     padding: 50px;
     margin: 0 auto;
 
@@ -30,7 +30,7 @@
     background-color: var(--dark-green);
 }
 
-.info {
+.form {
     padding: 50px;
 
     border: var(--dark) 1px solid;
@@ -41,12 +41,15 @@
     display: flex;
     flex-direction: column;
 
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
-.password{
+.email, .password, .avatar {
     margin-top: 10px;
 }
+
+
+
 
 
 

@@ -18,7 +18,7 @@ export const GoodsPage = () => {
     }, [dispatch])
 
     return (
-        <section className={styles.goodspage}>
+        <section className={styles.goodsPage}>
             <Row>
                 <Col span={12} offset={6}>
                     <AdminTable/>

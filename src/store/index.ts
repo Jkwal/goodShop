@@ -3,4 +3,4 @@ export type { AppDispatch } from "./store";
 
 export {loadCategories,loadProductsByCategory,getIsLoadingCategories,getListProductsCategory,getAllCategories} from './categories';
 export {loadProducts,getAllProducts,loadSingleProduct,getSingleProduct,getIsLoadingProducts} from './products';
-export {addItemToCart,userReducer} from './user'
+export {addItemToCart,userReducer,getUser,createUser,getIsAuth,loginUser} from './user'

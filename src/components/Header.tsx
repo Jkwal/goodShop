@@ -1,16 +1,20 @@
 import {Input} from 'antd';
+import {useSelector} from "react-redux";
 import {Link, NavLink} from "react-router-dom";
 
 import {ROUTES} from "utils";
 import styles from 'styles/Header.module.css';
 
 import {Cart} from "./Cart";
+import {getIsAuth} from "../store";
 
 
 const {Search} = Input;
 
 
 export const Header = () => {
+
+    const isAuth = useSelector(getIsAuth)
 
     const onSearch = (value: string) => console.log(value);
 
@@ -41,12 +45,18 @@ export const Header = () => {
 
                 {/*{false && <div className={styles.box}></div>}*/}
             </form>
-
-            <NavLink to={ROUTES.LOGIN}>
-                <div className={styles.login}>
-                    <div className={styles.username}>Log in</div>
-                </div>
-            </NavLink>
+            {!isAuth
+                ? <NavLink to={ROUTES.LOGIN}>
+                    <div className={styles.login}>
+                        <div className={styles.username}>Log in</div>
+                    </div>
+                </NavLink>
+                : <NavLink to={ROUTES.LOGIN}>
+                    <div className={styles.logout}>
+                        <div className={styles.username}>Log out</div>
+                    </div>
+                </NavLink>
+            }
 
 
             <Link

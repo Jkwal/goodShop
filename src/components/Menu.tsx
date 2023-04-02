@@ -19,8 +19,8 @@ export function Menu() {
                         isLoading
                             ? <Loader/>
                             : categories.map(({id, name}) => (
-                                <li key={id}>
-                                    <NavLink to={`/categories/${id}`}>
+                                <li key={id} >
+                                    <NavLink to={`/categories/${id}`} className={styles.link}>
                                         {name}
                                     </NavLink>
                                 </li>

@@ -1,5 +1,5 @@
 .LoginPage {
-    padding: 1.5rem;
+    padding: 1.5rem 0 4rem 0;
 }
 
 .header {
@@ -14,12 +14,8 @@
     margin-left: 30px;
 }
 
-.title {
-    font-size: 30px;
-}
-
-.content {
-    width: 50vw;
+.form {
+    width: 30vw;
     padding: 50px;
     margin: 0 auto;
 

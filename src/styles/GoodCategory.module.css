@@ -29,3 +29,8 @@
 }
 
 
+.subHeading:hover, .subHeading:focus{
+    color: var(--white);
+
+    transition: 0.4s;
+}

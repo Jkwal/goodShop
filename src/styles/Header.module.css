@@ -20,22 +20,35 @@
     color: var(--light-brown);
 }
 
-.goods{
+.goods {
     font-size: 25px;
     color: black;
 }
 
-.search{
+.search {
     width: 250px;
 }
 
-.box{
+.box {
     height: 100px;
     border: 1px solid black;
 }
 
-.login{
-padding: 5px 20px;
+.login, .logout {
+    padding: 5px 20px;
     border: 1px solid var(--light-brown);
     color: var(--light-brown);
 }
+
+.login:hover, .login:focus, .logout:hover, .logout:focus{
+    border: 1px solid var(--dark);
+    color: var(--dark);
+
+    transition: 0.5s;
+}
+
+.logout{
+    color: rgb(222, 45, 45);
+    border: 1px solid #7c1515;
+}
+

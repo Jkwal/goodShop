@@ -1,16 +1,33 @@
 import axios from "axios";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {BASE_URL} from "utils";
-import {loadProducts, loadSingleProduct} from "../products";
 
 const SLICE_NAME = "users";
 
 export const createUser = createAsyncThunk(
     `${SLICE_NAME}/createUser`,
-    async (payload, thunkAPI) => {
+    async (payload: any, thunkAPI) => {
         try {
             const res = await axios.post(`${BASE_URL}/${SLICE_NAME}`, payload);
             return res.data;
+        } catch (err) {
+            console.log(err);
+            return thunkAPI.rejectWithValue(err);
+        }
+    }
+);
+
+export const loginUser = createAsyncThunk(
+    `${SLICE_NAME}/loginUser`,
+    async (payload:any, thunkAPI) => {
+        try {
+            const res = await axios.post(`${BASE_URL}/auth/login`, payload);
+            const login = await axios(`${BASE_URL}/auth/profile`, {
+                headers: {
+                    Authorization: `Bearer ${res.data.access_token}`,
+                },
+            });
+            return login.data;
         } catch (err) {
             console.log(err);
             return thunkAPI.rejectWithValue(err);
@@ -25,6 +42,7 @@ const userSlice = createSlice({
         currentUser: null,
         cart: [],
         isLoading: false,
+        isAuth: false,
     },
     reducers: {
         addItemToCart: (state, {payload}) => {
@@ -45,7 +63,11 @@ const userSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(createUser.fulfilled, (state, {payload}) => {
             state.currentUser = payload;
-        })
+        });
+        builder.addCase(loginUser.fulfilled, (state, {payload}) => {
+            state.currentUser = payload;
+            state.isAuth = true;
+        });
     },
 
 });
