@@ -86,9 +86,15 @@ const userSlice = createSlice({
         builder.addCase(createUser.fulfilled, (state, {payload}) => {
             state.currentUser = payload;
         });
+        builder.addCase(createUser.rejected, (state, {payload}) => {
+            state.isAuth = false;
+        });
         builder.addCase(loginUser.fulfilled, (state, {payload}) => {
             state.currentUser = payload;
             state.isAuth = true;
+        });
+        builder.addCase(loginUser.rejected, (state, {payload}) => {
+            state.isAuth = false;
         });
     },
 

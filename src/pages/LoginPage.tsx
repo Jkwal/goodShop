@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {NavLink, useNavigate} from "react-router-dom";
-import {Button, Input, message} from "antd";
+import {Button, Input} from "antd";
 
 import {ROUTES} from "../utils";
 
@@ -12,18 +12,7 @@ import {useSelector} from "react-redux";
 
 export function LoginPage() {
 
-    const [messageApi, contextHolder] = message.useMessage();
 
-    const error = () => {
-        messageApi.open({
-            type: 'error',
-            content: 'Invalid username or password',
-            style: {
-                marginTop: '20vh',
-            },
-            duration: 3,
-        });
-    };
 
     const dispatch = useAppDispatch();
     const user = useSelector(getUser)
@@ -54,8 +43,9 @@ export function LoginPage() {
 
         dispatch(loginUser(values));
 
-        if (dispatch(loginUser.rejected)) {
-            error()
+        if (dispatch(loginUser.fulfilled)) {
+            handleClear();
+            navigate(ROUTES.HOME);
         }
 
     };
@@ -64,7 +54,7 @@ export function LoginPage() {
 
     return (
         <section className={styles.LoginPage}>
-            {contextHolder}
+
             <div className={styles.header}>
                 <Button ghost onClick={() => navigate(-1)}>Back</Button>
 

@@ -9,30 +9,6 @@ import {ROUTES} from "../utils";
 
 export function RegistrationPage() {
 
-    const [messageApi, contextHolder] = message.useMessage();
-
-    const success = () => {
-        messageApi.open({
-            type: 'success',
-            content: 'Registration is processed',
-            style: {
-                marginTop: '20vh',
-            },
-            duration: 3,
-        });
-        handleClear();
-
-    };
-    const error = () => {
-        messageApi.open({
-            type: 'error',
-            content: 'Registration error',
-            style: {
-                marginTop: '20vh',
-            },
-            duration: 3,
-        });
-    };
 
     const navigate = useNavigate();
 
@@ -61,14 +37,9 @@ export function RegistrationPage() {
 
         dispatch(createUser(values));
 
-        if (!dispatch(createUser.rejected)) {
+        if (dispatch(createUser.fulfilled)) {
             handleClear();
-            success();
             navigate(ROUTES.LOGIN);
-        }
-
-        if (dispatch(createUser.rejected)) {
-            error();
         }
 
     };
@@ -83,7 +54,6 @@ export function RegistrationPage() {
 
     return (
         <section className={styles.RegistrationPage}>
-            {contextHolder}
             <div className={styles.header}>
                 <Button ghost onClick={() => navigate(-1)}>Back</Button>
 
