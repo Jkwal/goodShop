@@ -3,7 +3,7 @@
 https://fakeapi.platzi.com/  API 
 
 
-Typescript, React,React Router DOM, Redux Toolkit, axios, Ant Design, SwiperJS
+Typescript, React, React Router DOM, Redux Toolkit, axios, Ant Design, SwiperJS
 
 
 
