@@ -3,7 +3,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {BASE_URL} from "utils";
 
 import {CurrentUser} from "../../types/currentUser";
-import {CartItem, Product} from "../../types";
+import {CartItem} from "../../types";
 
 const SLICE_NAME = "users";
 

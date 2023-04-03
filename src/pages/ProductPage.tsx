@@ -5,7 +5,7 @@ import {Button, Image} from "antd";
 
 import {useAppDispatch} from "../hooks";
 
-import {addItemToCart, getCart, getSingleProduct, loadSingleProduct} from "../store";
+import {addItemToCart,getSingleProduct, loadSingleProduct} from "../store";
 import styles from 'styles/ProductPage.module.css'
 
 import {Menu} from "../components/Menu";
