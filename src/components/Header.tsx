@@ -37,12 +37,12 @@ export const Header = () => {
             </Link>
             {
 
-                user.role === 'customer' && <Link
+                user?.role === 'admin' ? <Link
                     className={styles.goods}
                     to={ROUTES.GOODS}
                 >
                     Admin panel
-                </Link>
+                </Link> : null
             }
 
 
@@ -66,7 +66,7 @@ export const Header = () => {
                     : <>
                         {
                             isAuth && <Button ghost
-                                    onClick={() => user.role === 'customer' ? dispatch(becomeAdmin()) : dispatch(becomeUser())}>##</Button>
+                                    onClick={() => user?.role === 'customer' ? dispatch(becomeAdmin()) : dispatch(becomeUser())}>##</Button>
                         }
 
                         <div className={styles.wrapper}>
