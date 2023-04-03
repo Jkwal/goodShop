@@ -1,9 +1,11 @@
 [GitHub Pages](https://jkwal.github.io/goodShop/)
 
-https://fakeapi.platzi.com/ 
+https://fakeapi.platzi.com/  API 
 
-https://ant.design/ 
 
-axios
+Typescript, React,React Router DOM, Redux Toolkit, axios, Ant Design, SwiperJS
+
+
+
 
 
