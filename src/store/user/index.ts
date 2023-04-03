@@ -1,2 +1,2 @@
-export {userReducer, createUser,loginUser, addItemToCart,logOut} from './slice';
-export {getUser,getIsAuth} from './selectors';
+export {userReducer, createUser,loginUser, addItemToCart,logOut,removeItemFromCart} from './slice';
+export {getUser,getIsAuth,getCart} from './selectors';

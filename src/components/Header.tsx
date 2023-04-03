@@ -1,4 +1,4 @@
-import {Image, Input} from 'antd';
+import {Input} from 'antd';
 import {useSelector} from "react-redux";
 import {Link, NavLink} from "react-router-dom";
 
@@ -76,7 +76,7 @@ export const Header = () => {
                 !isAuth
                     ? <Link
                         className={styles.basket}
-                        to={ROUTES.REGISTRATION}
+                        to={ROUTES.LOGIN}
                     >
                         <Cart/>
                     </Link>

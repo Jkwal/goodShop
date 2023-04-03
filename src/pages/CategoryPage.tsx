@@ -11,6 +11,7 @@ import {getListProductsCategory, loadProductsByCategory} from "../store";
 import styles from 'styles/CategoryPage.module.css';
 
 import {CardGood} from "../components/Card";
+import {Menu} from "../components/Menu";
 
 
 export function CategoryPage() {
@@ -29,12 +30,13 @@ export function CategoryPage() {
 
     return (
         <>
+            <Menu/>
             <section className={styles.categoryPage}>
 
                 <div className={styles.header}>
                     <Button ghost onClick={() => navigate(-1)}>Back</Button>
 
-                    <h2 className={styles.title} >{products[0]?.category?.name}</h2>
+                    <h2 className={styles.title}>{products[0]?.category?.name}</h2>
                 </div>
 
                 <Space size={[20, 20]} wrap>

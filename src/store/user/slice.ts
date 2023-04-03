@@ -3,6 +3,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {BASE_URL} from "utils";
 
 import {CurrentUser} from "../../types/currentUser";
+import {CartItem, Product} from "../../types";
 
 const SLICE_NAME = "users";
 
@@ -41,7 +42,7 @@ export const loginUser = createAsyncThunk(
 
 export interface State {
     currentUser: CurrentUser,
-    cart: [],
+    cart: CartItem[],
     isAuth: boolean,
 }
 
@@ -69,6 +70,9 @@ const userSlice = createSlice({
 
             state.cart = newCart;
         },
+        removeItemFromCart: (state, { payload }) => {
+            state.cart = state.cart.filter(({ id }) => id !== payload);
+        },
         logOut: (state) => {
             state.currentUser = Object.assign({});
             state.isAuth = false;
@@ -87,5 +91,5 @@ const userSlice = createSlice({
 });
 
 export const userReducer = userSlice.reducer;
-export const {addItemToCart, logOut} = userSlice.actions;
+export const {addItemToCart,removeItemFromCart, logOut} = userSlice.actions;
 

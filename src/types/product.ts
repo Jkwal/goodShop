@@ -8,3 +8,7 @@ export interface Product {
     category?: Category,
     images?: string[]
 }
+
+export interface CartItem extends Product{
+    quantity: number;
+}

@@ -22,7 +22,6 @@ function App() {
     return (
         <>
             <Header/>
-            <Menu/>
             <main className="container">
                 <AppRoutes/>
             </main>

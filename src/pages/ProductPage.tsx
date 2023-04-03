@@ -5,8 +5,10 @@ import {Button, Image} from "antd";
 
 import {useAppDispatch} from "../hooks";
 
-import {addItemToCart, getSingleProduct, loadSingleProduct} from "../store";
+import {addItemToCart, getCart, getSingleProduct, loadSingleProduct} from "../store";
 import styles from 'styles/ProductPage.module.css'
+
+import {Menu} from "../components/Menu";
 
 
 export function ProductPage() {
@@ -15,9 +17,8 @@ export function ProductPage() {
     const navigate = useNavigate();
 
     const dispatch = useAppDispatch();
-
     const product = useSelector(getSingleProduct);
-    const {title, images, price, description,category} = product;
+    const {title, images, price, description, category} = product;
 
     const addToCart = () => {
         dispatch(addItemToCart(product));
@@ -29,42 +30,43 @@ export function ProductPage() {
 
 
     return (
-        <section className={styles.categoryPage}>
-            <div className={styles.header}>
-                <Button ghost onClick={() => navigate(-1)}>Back</Button>
+        <>
+            <Menu/>
+            <section className={styles.categoryPage}>
+                <div className={styles.header}>
+                    <Button ghost onClick={() => navigate(-1)}>Back</Button>
 
-                <h2 className={styles.heading} >{category?.name}</h2>
-            </div>
+                    <h2 className={styles.heading}>{category?.name}</h2>
+                </div>
 
-            <div className={styles.content}>
+                <div className={styles.content}>
 
-                <div className={styles.info}>
-                    <h2 className={styles.title}>{title}</h2>
-                    <p className={styles.description}>{description}</p>
+                    <div className={styles.info}>
+                        <h2 className={styles.title}>{title}</h2>
+                        <p className={styles.description}>{description}</p>
 
-                    <div className={styles.wrapper}>
+                        <div className={styles.wrapper}>
 
-                        <Button className={styles.button} onClick={addToCart}>
-                            Add to cart
-                        </Button>
+                            <Button className={styles.button} onClick={addToCart}>
+                                Add to cart
+                            </Button>
 
 
-                        <p className={styles.price}>{price}$</p>
+                            <p className={styles.price}>{price}$</p>
+                        </div>
                     </div>
+                    <div className={styles.containerImage}>
+                        {
+                            images?.length
+                                ? images.map((img) => (
+                                    <Image key={img} className={styles.image} src={`${img}`} alt={title}/>))
+                                : null
+                        }
+                    </div>
+
                 </div>
-                <div className={styles.containerImage}>
-                    {
-                        images?.length
-                            ? images.map((img) => (
-                                <Image key={img} className={styles.image} src={`${img}`} alt={title}/>))
-                            : null
-                    }
-                </div>
 
-            </div>
-
-        </section>
-
-
+            </section>
+        </>
     )
 }
