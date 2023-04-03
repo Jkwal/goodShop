@@ -1,12 +1,38 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {Button, Input} from "antd";
+import {Button, Input, message} from "antd";
 
 import styles from "styles/RegistrationPage.module.css";
 import {useAppDispatch} from "../hooks";
 import {createUser} from "../store";
+import {ROUTES} from "../utils";
 
 export function RegistrationPage() {
+
+    const [messageApi, contextHolder] = message.useMessage();
+
+    const success = () => {
+        messageApi.open({
+            type: 'success',
+            content: 'Registration is processed',
+            style: {
+                marginTop: '20vh',
+            },
+            duration: 3,
+        });
+        handleClear();
+
+    };
+    const error = () => {
+        messageApi.open({
+            type: 'error',
+            content: 'Registration error',
+            style: {
+                marginTop: '20vh',
+            },
+            duration: 3,
+        });
+    };
 
     const navigate = useNavigate();
 
@@ -34,11 +60,30 @@ export function RegistrationPage() {
         if (!isNotEmpty) return;
 
         dispatch(createUser(values));
+
+        if (!dispatch(createUser.rejected)) {
+            handleClear();
+            success();
+            navigate(ROUTES.LOGIN);
+        }
+
+        if (dispatch(createUser.rejected)) {
+            error();
+        }
+
     };
+
+    const handleClear = () => setValues({
+        name: "",
+        email: "",
+        password: "",
+        avatar: "",
+    })
+
 
     return (
         <section className={styles.RegistrationPage}>
-
+            {contextHolder}
             <div className={styles.header}>
                 <Button ghost onClick={() => navigate(-1)}>Back</Button>
 
@@ -95,11 +140,12 @@ export function RegistrationPage() {
                             Register
                         </Button>
 
+
                     </div>
                 </form>
 
             </div>
-            <div style={{width:"30vw", margin: "0 auto"}}>
+            <div style={{width: "30vw", margin: "0 auto"}}>
                 <p>Можно скопировать эту ссылку для аватара:</p><br/>
                 <p>https://api.lorem.space/image/face?w=640&h=480&r=867</p>
             </div>

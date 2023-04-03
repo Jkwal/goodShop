@@ -70,13 +70,17 @@ const userSlice = createSlice({
 
             state.cart = newCart;
         },
-        removeItemFromCart: (state, { payload }) => {
-            state.cart = state.cart.filter(({ id }) => id !== payload);
+        removeItemFromCart: (state, {payload}) => {
+            state.cart = state.cart.filter(({id}) => id !== payload);
+        },
+        clearCart: (state) => {
+            state.cart = []
         },
         logOut: (state) => {
             state.currentUser = Object.assign({});
             state.isAuth = false;
         },
+
     },
     extraReducers: (builder) => {
         builder.addCase(createUser.fulfilled, (state, {payload}) => {
@@ -91,5 +95,5 @@ const userSlice = createSlice({
 });
 
 export const userReducer = userSlice.reducer;
-export const {addItemToCart,removeItemFromCart, logOut} = userSlice.actions;
+export const {clearCart,addItemToCart, removeItemFromCart, logOut} = userSlice.actions;
 

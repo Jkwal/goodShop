@@ -37,16 +37,20 @@
 }
 
 .item {
-    margin-top: 2px;
-
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     border: var(--dark) 1px solid;
 }
 
+.item:not(:first-child){
+    margin-top: 20px;
+}
+
 .img{
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 
     border: var(--dark) 1px solid;
 
@@ -56,7 +60,7 @@
 }
 
 .title{
-
+width:  170px;
 }
 
 .price{
@@ -64,19 +68,31 @@
 }
 
 .quantity{
-
+    display: flex;
+    align-items: center;
 }
 
 .about{
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 
     border: var(--dark) 1px solid;
 }
 
 .total{
+display: flex;
+    justify-content: space-between;
+}
 
+.empty{
+    width: 20%;
+    margin: 0 auto;
+}
+
+.change{
+    display: flex;
+    column-gap: 10px;
 }
 
 

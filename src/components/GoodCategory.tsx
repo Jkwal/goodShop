@@ -40,6 +40,7 @@ export const GoodCategory = () => {
                 {
                     productsByCategory.map(({id, price, title, images}) => (
                         <div key={id}>
+
                             <NavLink to={`/products/${id}`}>
 
                                 <CardGood title={title} price={price} images={`${images![0]}`}/>

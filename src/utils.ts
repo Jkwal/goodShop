@@ -19,3 +19,5 @@ function getRandomInt(min: number, max: number) {
 }
 
 export const randomNumber = getRandomInt(1, 5)
+
+export const sum = (arr:number[]) => arr.reduce((prev, cur) => prev + cur, 0);

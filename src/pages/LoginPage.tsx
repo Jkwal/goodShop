@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {NavLink, useNavigate} from "react-router-dom";
-import {Button, Input} from "antd";
+import {Button, Input, message} from "antd";
 
 import {ROUTES} from "../utils";
 
@@ -11,6 +11,19 @@ import {getUser, loginUser} from "../store";
 import {useSelector} from "react-redux";
 
 export function LoginPage() {
+
+    const [messageApi, contextHolder] = message.useMessage();
+
+    const error = () => {
+        messageApi.open({
+            type: 'error',
+            content: 'Invalid username or password',
+            style: {
+                marginTop: '20vh',
+            },
+            duration: 3,
+        });
+    };
 
     const dispatch = useAppDispatch();
     const user = useSelector(getUser)
@@ -28,9 +41,9 @@ export function LoginPage() {
 
     const handleClear = () => setValues({email: "", password: ""})
 
-    useEffect(()=>{
+    useEffect(() => {
         handleClear()
-    },[user])
+    }, [user])
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -40,13 +53,18 @@ export function LoginPage() {
         if (!isNotEmpty) return;
 
         dispatch(loginUser(values));
+
+        if (dispatch(loginUser.rejected)) {
+            error()
+        }
+
     };
 
     const navigate = useNavigate();
 
     return (
         <section className={styles.LoginPage}>
-
+            {contextHolder}
             <div className={styles.header}>
                 <Button ghost onClick={() => navigate(-1)}>Back</Button>
 

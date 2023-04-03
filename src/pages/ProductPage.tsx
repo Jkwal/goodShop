@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
-import {Button, Image} from "antd";
+import {Button, Image, message} from "antd";
 
 import {useAppDispatch} from "../hooks";
 
@@ -12,6 +12,20 @@ import {Menu} from "../components/Menu";
 
 
 export function ProductPage() {
+
+    const [messageApi, contextHolder] = message.useMessage();
+
+    const success = () => {
+        messageApi.open({
+            type: 'success',
+            content: 'Item in cart',
+            style: {
+                marginTop: '26vh',
+            },
+            duration: 1,
+        });
+        addToCart();
+    };
 
     const {id} = useParams();
     const navigate = useNavigate();
@@ -32,7 +46,9 @@ export function ProductPage() {
     return (
         <>
             <Menu/>
+
             <section className={styles.categoryPage}>
+                {contextHolder}
                 <div className={styles.header}>
                     <Button ghost onClick={() => navigate(-1)}>Back</Button>
 
@@ -47,7 +63,7 @@ export function ProductPage() {
 
                         <div className={styles.wrapper}>
 
-                            <Button className={styles.button} onClick={addToCart}>
+                            <Button className={styles.button} onClick={success}>
                                 Add to cart
                             </Button>
 

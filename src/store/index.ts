@@ -6,5 +6,5 @@ export {
 } from './categories';
 export {loadProducts, getAllProducts, loadSingleProduct, getSingleProduct, getIsLoadingProducts} from './products';
 export {
-    addItemToCart, userReducer, getUser, createUser, getIsAuth, loginUser, logOut, getCart, removeItemFromCart
+    addItemToCart, userReducer, getUser, createUser, getIsAuth, loginUser, logOut, getCart, removeItemFromCart,clearCart
 } from './user'
