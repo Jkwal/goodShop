@@ -13,6 +13,7 @@ import {CartItem} from "../types";
 import {addItemToCart, getCart, removeItemFromCart,clearCart} from "../store";
 
 export function CartPage() {
+
     const [messageApi, contextHolder] = message.useMessage();
 
     const success = () => {

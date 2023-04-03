@@ -1,11 +1,11 @@
-import {Input} from 'antd';
+import {Button, Input} from 'antd';
 import {useSelector} from "react-redux";
 import {Link, NavLink} from "react-router-dom";
 
 import {ROUTES} from "utils";
 import styles from 'styles/Header.module.css';
 
-import {getIsAuth, getUser, logOut} from "../store";
+import {becomeAdmin, becomeUser, getIsAuth, getUser, logOut} from "../store";
 import {useAppDispatch} from "../hooks";
 
 import {Cart} from "./Cart";
@@ -18,11 +18,13 @@ export const Header = () => {
 
     const isAuth = useSelector(getIsAuth);
     const user = useSelector(getUser);
+    console.log(user)
 
 
     const handleLogOut = () => {
         dispatch(logOut())
     }
+
 
     return (
         <section className={styles.header}>
@@ -33,13 +35,16 @@ export const Header = () => {
             >
                 GoodStore
             </Link>
+            {
 
-            <Link
-                className={styles.goods}
-                to={ROUTES.GOODS}
-            >
-                Admin panel
-            </Link>
+                user.role === 'customer' && <Link
+                    className={styles.goods}
+                    to={ROUTES.GOODS}
+                >
+                    Admin panel
+                </Link>
+            }
+
 
             <form className={styles.form}>
                 <Search className={styles.search}
@@ -59,9 +64,15 @@ export const Header = () => {
                     </NavLink>
 
                     : <>
+                        {
+                            isAuth && <Button ghost
+                                    onClick={() => user.role === 'customer' ? dispatch(becomeAdmin()) : dispatch(becomeUser())}>##</Button>
+                        }
+
                         <div className={styles.wrapper}>
-                            <div style={{backgroundImage: `url(${user.avatar})`}}
-                                 className={styles.avatar}></div>
+                            <div
+                                style={{backgroundImage: `url(${user.avatar})`}}
+                                className={styles.avatar}></div>
                             <p className={styles.name}>{user.name}</p>
                         </div>
                         <NavLink to={ROUTES.LOGIN}>

@@ -5,7 +5,7 @@ import {Button, Image, message} from "antd";
 
 import {useAppDispatch} from "../hooks";
 
-import {addItemToCart,getSingleProduct, loadSingleProduct} from "../store";
+import {addItemToCart, getIsAuth, getSingleProduct, loadSingleProduct} from "../store";
 import styles from 'styles/ProductPage.module.css'
 
 import {Menu} from "../components/Menu";
@@ -24,7 +24,6 @@ export function ProductPage() {
             },
             duration: 1,
         });
-        addToCart();
     };
 
     const {id} = useParams();
@@ -32,10 +31,13 @@ export function ProductPage() {
 
     const dispatch = useAppDispatch();
     const product = useSelector(getSingleProduct);
+    const isAuth = useSelector(getIsAuth)
     const {title, images, price, description, category} = product;
 
     const addToCart = () => {
         dispatch(addItemToCart(product));
+
+        isAuth && success();
     };
 
     useEffect(() => {
@@ -63,10 +65,15 @@ export function ProductPage() {
 
                         <div className={styles.wrapper}>
 
-                            <Button className={styles.button} onClick={success}>
-                                Add to cart
-                            </Button>
+                            {
+                                isAuth ? <Button className={styles.button} onClick={addToCart}>
+                                        Add to cart
+                                    </Button>
 
+                                    : <Button disabled className={styles.button} onClick={addToCart}>
+                                        Add to cart
+                                    </Button>
+                            }
 
                             <p className={styles.price}>{price}$</p>
                         </div>

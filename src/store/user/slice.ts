@@ -80,20 +80,26 @@ const userSlice = createSlice({
             state.currentUser = Object.assign({});
             state.isAuth = false;
         },
+        becomeAdmin:(state)=>{
+            state.currentUser.role = 'admin'
+        },
+        becomeUser:(state)=>{
+            state.currentUser.role = 'customer'
+        }
 
     },
     extraReducers: (builder) => {
         builder.addCase(createUser.fulfilled, (state, {payload}) => {
             state.currentUser = payload;
         });
-        builder.addCase(createUser.rejected, (state, {payload}) => {
+        builder.addCase(createUser.rejected, (state) => {
             state.isAuth = false;
         });
         builder.addCase(loginUser.fulfilled, (state, {payload}) => {
             state.currentUser = payload;
             state.isAuth = true;
         });
-        builder.addCase(loginUser.rejected, (state, {payload}) => {
+        builder.addCase(loginUser.rejected, (state) => {
             state.isAuth = false;
         });
     },
@@ -101,5 +107,5 @@ const userSlice = createSlice({
 });
 
 export const userReducer = userSlice.reducer;
-export const {clearCart,addItemToCart, removeItemFromCart, logOut} = userSlice.actions;
+export const {clearCart,becomeUser,becomeAdmin,addItemToCart, removeItemFromCart, logOut} = userSlice.actions;
 

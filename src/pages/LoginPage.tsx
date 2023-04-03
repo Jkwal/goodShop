@@ -44,7 +44,6 @@ export function LoginPage() {
         dispatch(loginUser(values));
 
         if (dispatch(loginUser.fulfilled)) {
-            handleClear();
             navigate(ROUTES.HOME);
         }
 

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {Button, Input, message} from "antd";
+import {Button, Input} from "antd";
 
 import styles from "styles/RegistrationPage.module.css";
 import {useAppDispatch} from "../hooks";
