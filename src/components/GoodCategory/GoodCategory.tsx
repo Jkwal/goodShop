@@ -3,13 +3,13 @@ import {useSelector} from "react-redux";
 import {NavLink} from "react-router-dom";
 import {Space} from "antd/lib";
 
-import {ProductCard} from "./ProductCard";
-import styles from 'styles/GoodCategory.module.css';
+import {ProductCard} from "../ProductCard";
+import styles from 'components/GoodCategory/GoodCategory.module.css';
 
-import {randomNumber} from "../utils";
-import {useAppDispatch} from "../hooks";
+import {randomNumber} from "../../utils";
+import {useAppDispatch} from "../../hooks";
 
-import {getListProductsCategory, loadProductsByCategory} from "../store";
+import {getListProductsCategory, loadProductsByCategory} from "../../store";
 
 
 export const GoodCategory = () => {
@@ -36,7 +36,7 @@ export const GoodCategory = () => {
 
             </div>
 
-            <Space size={[8, 16]} wrap>
+            <Space className={styles.container} size={[8, 16]} wrap>
                 {
                     productsByCategory.map(({id, price, title, images}) => (
                         <div key={id}>

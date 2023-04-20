@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 
 import styles from 'styles/Menu.module.css';
 
-import {Loader} from "./Loader";
+import {Loader} from "./common/Loader/Loader";
 import {getAllCategories, getIsLoadingCategories} from "../store";
 
 

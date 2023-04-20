@@ -28,9 +28,12 @@
     color: var(--dark);
 }
 
-
 .subHeading:hover, .subHeading:focus{
     color: var(--white);
 
     transition: 0.4s;
+}
+
+.container{
+    justify-content: center;
 }

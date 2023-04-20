@@ -64,6 +64,7 @@ const {reducer, actions: sliceActions} = createSlice({
             state.list = payload;
             state.isLoading = false;
         });
+
         builder.addCase(loadProductsByCategory.pending, (state) => {
             state.loadStatus = LOAD_STATUSES.LOADING;
             state.isLoading = true;
