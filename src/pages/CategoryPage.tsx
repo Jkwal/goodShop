@@ -10,8 +10,9 @@ import {getListProductsCategory, loadProductsByCategory} from "../store";
 
 import styles from 'styles/CategoryPage.module.css';
 
-import {CardGood} from "../components/Card";
+import {ProductCard} from "../components/ProductCard";
 import {Menu} from "../components/Menu";
+
 
 
 export function CategoryPage() {
@@ -45,7 +46,7 @@ export function CategoryPage() {
                             <div key={id}>
                                 <NavLink to={`/products/${id}`}>
 
-                                    <CardGood title={title} price={price} images={`${images![0]}`}/>
+                                    <ProductCard id={id} title={title} price={price} images={images}/>
 
                                 </NavLink>
                             </div>

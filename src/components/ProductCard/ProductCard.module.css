@@ -1,21 +1,25 @@
-.image {
-    margin-bottom: 20px;
+.card {
+    width: 250px;
+}
 
+.image {
+    width: 200px;
     border: 1px solid black;
+
 }
 
 .info {
-    padding: 5px;
-
     border: 1px solid var(--dark);
 }
 
-.title {
+.title{
+    height: 45px;
     margin-bottom: 20px;
 
-    font-size: 15px;
+    overflow: hidden;
 }
 
-.price {
+.price{
     font-size: 30px;
 }
+

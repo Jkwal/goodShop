@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {NavLink} from "react-router-dom";
 import {Space} from "antd/lib";
 
-import {CardGood} from "./Card";
+import {ProductCard} from "./ProductCard";
 import styles from 'styles/GoodCategory.module.css';
 
 import {randomNumber} from "../utils";
@@ -43,7 +43,7 @@ export const GoodCategory = () => {
 
                             <NavLink to={`/products/${id}`}>
 
-                                <CardGood title={title} price={price} images={`${images![0]}`}/>
+                                <ProductCard id={id} title={title} price={price} images={images}/>
 
                             </NavLink>
 

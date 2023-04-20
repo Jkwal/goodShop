@@ -21,7 +21,7 @@ export const loadProducts = createAsyncThunk(
 
 export const loadSingleProduct = createAsyncThunk(
     `${SLICE_NAME}/loadSingleProduct`,
-    async (id:string, thunkAPI) => {
+    async (id: string, thunkAPI) => {
         try {
             const res = await axios(`${BASE_URL}/${SLICE_NAME}/${id}`);
             return res.data;
@@ -53,9 +53,7 @@ const initialState: State = {
 const {reducer, actions: sliceActions} = createSlice({
     name: SLICE_NAME,
     initialState,
-    reducers: {
-
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder.addCase(loadProducts.pending, (state) => {
             state.loadStatus = LOAD_STATUSES.LOADING;
