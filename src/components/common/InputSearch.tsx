@@ -1,4 +1,3 @@
-import styles from "../Header/Header.module.css";
 import Search from "antd/es/input/Search";
 
 export const InputSearch = () => {
