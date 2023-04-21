@@ -8,7 +8,7 @@ import {useAppDispatch} from "../hooks";
 import {addItemToCart, getIsAuth, getSingleProduct, loadSingleProduct} from "../store";
 import styles from 'styles/ProductPage.module.css'
 
-import {Menu} from "../components/Menu";
+import {Menu} from "../components/Menu/Menu";
 
 
 export function ProductPage() {

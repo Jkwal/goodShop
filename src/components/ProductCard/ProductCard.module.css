@@ -4,22 +4,27 @@
 
 .image {
     width: 200px;
+    height: 200px;
+
     border: 1px solid black;
 
+    object-fit: cover;
 }
 
 .info {
+    margin-top: 20px;
+
     border: 1px solid var(--dark);
 }
 
-.title{
+.title {
     height: 45px;
     margin-bottom: 20px;
 
     overflow: hidden;
 }
 
-.price{
+.price {
     font-size: 30px;
 }
 

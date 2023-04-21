@@ -1,6 +1,6 @@
-import {Slider} from "components/common/Slider/Slider";
+import {Slider} from "components/common/Slider";
 import {GoodCategory} from "../components/GoodCategory";
-import {Menu} from "../components/Menu";
+import {Menu} from "../components/Menu/Menu";
 
 
 

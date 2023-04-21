@@ -26,11 +26,7 @@ li {
 }
 
 .swiper {
-    min-height: 350px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 350px;
 
     font-size: 36px;
     font-weight: bold;
@@ -39,9 +35,9 @@ li {
 }
 
 div.swiper-slide{
-    height: 350px;
-    border: 1px solid var(--dark);
     display: flex;
     justify-content: center;
     align-items: center;
+
+    border: 1px solid var(--dark);
 }
