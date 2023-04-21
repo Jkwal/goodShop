@@ -1,17 +1,15 @@
-import {Button, Input} from 'antd';
+import {Button} from 'antd';
 import {useSelector} from "react-redux";
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import {ROUTES} from "utils";
-import styles from 'styles/Header.module.css';
+import styles from './Header.module.css'
 
-import {becomeAdmin, becomeUser, getIsAuth, getUser, logOut} from "../store";
-import {useAppDispatch} from "../hooks";
+import {becomeAdmin, becomeUser, getIsAuth, getUser, logOut} from "../../store";
+import {useAppDispatch} from "../../hooks";
 
-import {Cart} from "./Cart";
-
-const {Search} = Input;
-
+import {Cart} from "../Cart";
+import {ButtonLogin, ButtonLogout, InputSearch, Logo} from "../common";
 
 export const Header = () => {
     const dispatch = useAppDispatch()
@@ -29,14 +27,9 @@ export const Header = () => {
     return (
         <section className={styles.header}>
 
-            <Link
-                className={styles.logo}
-                to={ROUTES.HOME}
-            >
-                GoodStore
-            </Link>
-            {
+            <Logo className={styles.logo}/>
 
+            {
                 user?.role === 'admin' ? <Link
                     className={styles.goods}
                     to={ROUTES.GOODS}
@@ -46,27 +39,15 @@ export const Header = () => {
             }
 
 
-            <form className={styles.form}>
-                <Search className={styles.search}
-                        placeholder="input search text"
-                        allowClear
-                        size="middle"
-                />
+            <InputSearch/>
 
-                {/*{false && <div className={styles.box}></div>}*/}
-            </form>
             {
                 !isAuth
-                    ? <NavLink to={ROUTES.LOGIN}>
-                        <div className={styles.login}>
-                            <div className={styles.username}>Log in</div>
-                        </div>
-                    </NavLink>
-
+                    ? <ButtonLogin/>
                     : <>
                         {
                             isAuth && <Button ghost
-                                    onClick={() => user?.role === 'customer' ? dispatch(becomeAdmin()) : dispatch(becomeUser())}>##</Button>
+                                              onClick={() => user?.role === 'customer' ? dispatch(becomeAdmin()) : dispatch(becomeUser())}>##</Button>
                         }
 
                         <div className={styles.wrapper}>
@@ -75,11 +56,7 @@ export const Header = () => {
                                 className={styles.avatar}></div>
                             <p className={styles.name}>{user.name}</p>
                         </div>
-                        <NavLink to={ROUTES.LOGIN}>
-                            <div className={styles.logout} onClick={handleLogOut}>
-                                Log out
-                            </div>
-                        </NavLink>
+                        <ButtonLogout onClick={handleLogOut}/>
                     </>
             }
 
