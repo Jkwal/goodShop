@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 
-import styles from 'components/GoodCategory/GoodCategory.module.css';
+import styles from 'components/Bestseller/Bestseller.module.css';
 
 import {randomNumber} from "../../utils";
 import {useAppDispatch} from "../../hooks";
@@ -9,7 +9,7 @@ import {loadProductsByCategory} from "../../store";
 import {ListCategoryProducts} from "../ListCategoryProducts";
 
 
-export const GoodCategory = () => {
+export const Bestseller = () => {
 
 
     const dispatch = useAppDispatch();

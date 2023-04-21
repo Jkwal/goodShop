@@ -1,0 +1,1 @@
+export {Bestseller} from './Bestseller'

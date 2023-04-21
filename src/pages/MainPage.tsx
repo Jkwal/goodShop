@@ -1,7 +1,6 @@
+import {Menu} from "components/Menu";
 import {Slider} from "components/common/Slider";
-import {GoodCategory} from "../components/GoodCategory";
-
-import {Menu} from "../components/Menu";
+import {Bestseller} from "components/Bestseller";
 
 
 export function MainPage() {
@@ -9,7 +8,7 @@ export function MainPage() {
         <>
             <Menu/>
             <Slider/>
-            <GoodCategory/>
+            <Bestseller/>
         </>
     )
 }

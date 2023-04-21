@@ -8,15 +8,14 @@ import styles from './Header.module.css'
 import {becomeAdmin, becomeUser, getIsAuth, getUser, logOut} from "../../store";
 import {useAppDispatch} from "../../hooks";
 
-import {Cart} from "../Cart";
-import {ButtonLogin, ButtonLogout, InputSearch, Logo} from "../common";
+import {ButtonAdminPanel, ButtonLogin, ButtonLogout, InputSearch, Logo, Basket} from "../common";
 
 export const Header = () => {
+
     const dispatch = useAppDispatch()
 
     const isAuth = useSelector(getIsAuth);
     const user = useSelector(getUser);
-    console.log(user)
 
 
     const handleLogOut = () => {
@@ -30,12 +29,9 @@ export const Header = () => {
             <Logo className={styles.logo}/>
 
             {
-                user?.role === 'admin' ? <Link
-                    className={styles.goods}
-                    to={ROUTES.GOODS}
-                >
-                    Admin panel
-                </Link> : null
+                user?.role === 'admin'
+                    ? <ButtonAdminPanel/>
+                    : null
             }
 
 
@@ -46,8 +42,14 @@ export const Header = () => {
                     ? <ButtonLogin/>
                     : <>
                         {
-                            isAuth && <Button ghost
-                                              onClick={() => user?.role === 'customer' ? dispatch(becomeAdmin()) : dispatch(becomeUser())}>##</Button>
+                            isAuth
+                            && <Button ghost
+                                       onClick={() =>
+                                           user?.role === 'customer'
+                                               ? dispatch(becomeAdmin())
+                                               : dispatch(becomeUser())}>
+                                ##
+                            </Button>
                         }
 
                         <div className={styles.wrapper}>
@@ -66,14 +68,13 @@ export const Header = () => {
                         className={styles.basket}
                         to={ROUTES.LOGIN}
                     >
-                        <Cart/>
+                        <Basket/>
                     </Link>
-
                     : <Link
                         className={styles.basket}
                         to={ROUTES.BASKET}
                     >
-                        <Cart/>
+                        <Basket/>
                     </Link>
 
             }

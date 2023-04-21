@@ -5,3 +5,5 @@ export {Logo} from './Logo';
 export {InputSearch} from './InputSearch';
 export {ButtonLogin} from './ButtonLogin';
 export {ButtonLogout} from './ButtonLogout';
+export {ButtonAdminPanel} from './ButtonAdminPanel';
+export {Basket} from './Basket';
