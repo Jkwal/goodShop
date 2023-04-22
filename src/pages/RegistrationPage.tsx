@@ -1,14 +1,15 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {Button, Input} from "antd";
 
+import {Button, Input} from "antd";
 import styles from "styles/RegistrationPage.module.css";
-import {useAppDispatch} from "../hooks";
-import {createUser} from "../store";
-import {ROUTES} from "../utils/routes";
+
+import {ROUTES} from "utils";
+import {createUser} from "store";
+import {useAppDispatch} from "hooks";
+
 
 export function RegistrationPage() {
-
 
     const navigate = useNavigate();
 

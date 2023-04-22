@@ -1,18 +1,16 @@
+import {useSelector} from "react-redux";
 import React, {useEffect, useState} from "react";
 import {NavLink, useNavigate} from "react-router-dom";
+
 import {Button, Input} from "antd";
+import styles from "styles/LoginPage.module.css";
 
-import {ROUTES} from "../utils/routes";
+import {ROUTES} from "utils";
+import {useAppDispatch} from "hooks";
+import {getUser, loginUser} from "store";
 
-
-import {useAppDispatch} from "../hooks";
-import styles from "../styles/LoginPage.module.css";
-import {getUser, loginUser} from "../store";
-import {useSelector} from "react-redux";
 
 export function LoginPage() {
-
-
 
     const dispatch = useAppDispatch();
     const user = useSelector(getUser)
@@ -21,7 +19,6 @@ export function LoginPage() {
         email: "",
         password: "",
     });
-
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();

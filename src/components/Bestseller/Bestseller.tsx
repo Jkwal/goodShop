@@ -2,11 +2,10 @@ import {useEffect} from "react";
 
 import styles from './Bestseller.module.css';
 
-import {randomNumber} from "utils/randomNumber";
 import {useAppDispatch} from "hooks";
-
-import {loadProductsByCategory} from "store";
 import {Category} from "../Category";
+import {loadProductsByCategory} from "store";
+import {randomNumber} from "utils/randomNumber";
 
 
 export const Bestseller = () => {

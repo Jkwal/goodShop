@@ -1,11 +1,10 @@
-import React from "react";
-import {NavLink} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {NavLink} from "react-router-dom";
 
-import styles from 'components/Menu/Menu.module.css';
+import styles from './Menu.module.css';
 
-import {getMenuData} from "../../store/categories/selectors";
-import {Loader} from "../../common";
+import {Loader} from "common";
+import {getMenuData} from "store/categories/selectors";
 
 
 export const Menu = () => {

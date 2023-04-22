@@ -1,16 +1,13 @@
 import React, {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
+
 import {Button, Image, message} from "antd";
-
-import {useAppDispatch} from "../hooks";
-
-import {addItemToCart, getIsAuth, getSingleProduct, loadSingleProduct} from "../store";
 import styles from 'styles/ProductPage.module.css';
 
-import {Menu} from "../components/Menu";
-
-
+import {useAppDispatch} from "hooks";
+import {Menu} from "components/Menu";
+import {addItemToCart, getIsAuth, getSingleProduct, loadSingleProduct} from "store";
 
 
 export function ProductPage() {

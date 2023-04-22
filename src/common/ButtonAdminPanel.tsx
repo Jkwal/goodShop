@@ -1,7 +1,7 @@
 import {FC} from "react";
 import {Link} from "react-router-dom";
 
-import {ROUTES} from "utils/routes";
+import {ROUTES} from "utils";
 
 
 interface ButtonAdminPanelProps {

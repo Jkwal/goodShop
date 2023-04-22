@@ -1,9 +1,9 @@
-import React from "react";
-import {Image, Table} from 'antd';
-import {NavLink} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {NavLink} from "react-router-dom";
 
-import {getAllProducts} from "../store";
+import {Image, Table} from 'antd';
+
+import {getAllProducts} from "store";
 
 
 const columns = [

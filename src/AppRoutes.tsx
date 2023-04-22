@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 
-import {ROUTES} from "./utils/routes";
+import {ROUTES} from "./utils";
 
 import {MainPage} from "./pages/MainPage";
 import {CategoryPage} from "./pages/CategoryPage";

@@ -3,20 +3,21 @@ import {useSelector} from "react-redux";
 import {NavLink, useParams} from "react-router-dom";
 
 import {Space} from "antd/lib";
-
-import {useAppDispatch} from "hooks";
-import {loadProductsByCategory} from "store";
-
 import styles from './Category.module.css';
 
+import {ButtonBack} from "common";
+import {useAppDispatch} from "hooks";
+import {loadProductsByCategory} from "store";
 import {ProductCard} from "components/ProductCard";
-import {ButtonBack} from "../../common";
-import {getMenuData} from "../../store/categories/selectors";
+import {getMenuData} from "store/categories/selectors";
+
+
 
 interface Category {
     withButtonBack: boolean;
     bestsellers: boolean
 }
+
 
 export const Category: React.FC<Category> = ({bestsellers, withButtonBack}) => {
 

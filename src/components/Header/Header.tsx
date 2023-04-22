@@ -1,14 +1,14 @@
-import {Button} from 'antd';
-import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 
-import {ROUTES} from "utils/routes";
-import styles from './Header.module.css'
+import {Button} from 'antd';
+import styles from './Header.module.css';
 
-import {becomeAdmin, becomeUser, getIsAuth, getUser, logOut} from "../../store";
-import {useAppDispatch} from "../../hooks";
+import {ROUTES} from "utils";
+import {useAppDispatch} from "hooks";
+import {becomeAdmin, becomeUser, getIsAuth, getUser, logOut} from "store";
+import {ButtonAdminPanel, ButtonLogin, ButtonLogout, InputSearch, Logo, Basket} from "common";
 
-import {ButtonAdminPanel, ButtonLogin, ButtonLogout, InputSearch, Logo, Basket} from "../../common";
 
 export const Header = () => {
 

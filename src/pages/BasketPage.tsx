@@ -1,16 +1,16 @@
 import React from "react";
-import {Button, message} from "antd";
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
+
+import {Button, message} from "antd";
 import {CloseOutlined} from "@ant-design/icons";
+import styles from 'styles/CartPage.module.css';
 
-import styles from 'styles/CartPage.module.css'
+import {CartItem} from "types";
+import {sumPrice} from "utils";
+import {useAppDispatch} from "hooks";
+import {addItemToCart, getCart, removeItemFromCart,clearCart} from "store";
 
-
-import {sumPrice} from "../utils/sumPrice";
-import {useAppDispatch} from "../hooks";
-import {CartItem} from "../types";
-import {addItemToCart, getCart, removeItemFromCart,clearCart} from "../store";
 
 export function BasketPage() {
 

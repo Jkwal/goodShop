@@ -1,7 +1,7 @@
 import {FC, MouseEvent} from "react";
 import {NavLink} from "react-router-dom";
 
-import {ROUTES} from "utils/routes";
+import {ROUTES} from "utils";
 
 
 interface ButtonLogoutProps {

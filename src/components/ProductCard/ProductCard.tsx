@@ -1,7 +1,6 @@
-import React from "react";
 import {Card, Image} from 'antd';
-
 import styles from './ProductCard.module.css';
+
 import {Product} from "types";
 
 

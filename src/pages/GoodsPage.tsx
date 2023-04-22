@@ -1,12 +1,12 @@
 import React, {useEffect} from "react";
+
 import {Col, Row} from "antd";
+import styles from 'styles/GoodsPage.module.css';
 
-import {useAppDispatch} from "../hooks";
-import { loadProducts} from "../store";
+import { loadProducts} from "store";
+import {useAppDispatch} from "hooks";
+import {AdminTable} from "components/AdminTable";
 
-import {AdminTable} from "../components/AdminTable";
-
-import styles from 'styles/GoodsPage.module.css'
 
 export const GoodsPage = () => {
 
@@ -25,7 +25,5 @@ export const GoodsPage = () => {
                 </Col>
             </Row>
         </section>
-
-
     )
 }
