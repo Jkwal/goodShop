@@ -3,13 +3,13 @@ import {Route, Routes} from "react-router-dom";
 import {ROUTES} from "./utils";
 
 import {MainPage} from "./pages/MainPage";
-import {CategoryPage} from "./pages/CategoryPage";
-import {ProductPage} from "./pages/ProductPage";
 import {NotFound} from "./pages/NotFound";
-import {LoginPage} from "./pages/LoginPage";
-import {RegistrationPage} from "./pages/RegistrationPage";
-import {BasketPage} from "./pages/BasketPage";
 import {GoodsPage} from "./pages/GoodsPage";
+import {LoginPage} from "./pages/LoginPage";
+import {BasketPage} from "./pages/BasketPage";
+import {ProductPage} from "./pages/ProductPage";
+import {CategoryPage} from "./pages/CategoryPage";
+import {RegistrationPage} from "./pages/RegistrationPage";
 
 
 const AppRoutes = () => (
