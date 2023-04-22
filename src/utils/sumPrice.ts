@@ -1,0 +1,1 @@
+export const sumPrice = (arr:number[]) => arr.reduce((prev, cur) => prev + cur, 0);

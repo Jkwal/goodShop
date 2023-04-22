@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import styles from 'components/Menu/Menu.module.css';
 
 import {getMenuData} from "../../store/categories/selectors";
-import {Loader} from "../common";
+import {Loader} from "../../common";
 
 
 export const Menu = () => {

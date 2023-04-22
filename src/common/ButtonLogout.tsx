@@ -1,6 +1,6 @@
 import {FC, MouseEvent} from "react";
-import {ROUTES} from "../../utils";
-import styles from "../Header/Header.module.css";
+import {ROUTES} from "../utils/routes";
+import styles from "../components/Header/Header.module.css";
 import {NavLink} from "react-router-dom";
 
 interface ButtonLogoutProps {

@@ -7,12 +7,12 @@ import {CloseOutlined} from "@ant-design/icons";
 import styles from 'styles/CartPage.module.css'
 
 
-import {sum} from "../utils";
+import {sumPrice} from "../utils/sumPrice";
 import {useAppDispatch} from "../hooks";
 import {CartItem} from "../types";
 import {addItemToCart, getCart, removeItemFromCart,clearCart} from "../store";
 
-export function CartPage() {
+export function BasketPage() {
 
     const [messageApi, contextHolder] = message.useMessage();
 
@@ -68,7 +68,7 @@ export function CartPage() {
                         <div className={styles.info}>
                             <div className={styles.total}>
                                 <div>
-                                    <strong>Total price:</strong> {sum(cart.map(({quantity, price}) => quantity * price))}$
+                                    <strong>Total price:</strong> {sumPrice(cart.map(({quantity, price}) => quantity * price))}$
                                 </div>
                                 <Button
                                     type="primary"

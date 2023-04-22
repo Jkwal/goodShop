@@ -1,11 +1,11 @@
 import {Menu} from "components/Menu/Menu";
-import {ListCategoryProducts} from "components/ListCategoryProducts";
+import {Category} from "components/Category";
 
 export function CategoryPage() {
     return (
         <>
             <Menu/>
-            <ListCategoryProducts bestsellers={false} withButtonBack={true}/>
+            <Category bestsellers={false} withButtonBack={true}/>
         </>
 
     );

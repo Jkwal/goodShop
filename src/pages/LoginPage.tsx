@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {NavLink, useNavigate} from "react-router-dom";
 import {Button, Input} from "antd";
 
-import {ROUTES} from "../utils";
+import {ROUTES} from "../utils/routes";
 
 
 import {useAppDispatch} from "../hooks";

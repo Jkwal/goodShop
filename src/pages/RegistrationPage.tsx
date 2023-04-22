@@ -5,7 +5,7 @@ import {Button, Input} from "antd";
 import styles from "styles/RegistrationPage.module.css";
 import {useAppDispatch} from "../hooks";
 import {createUser} from "../store";
-import {ROUTES} from "../utils";
+import {ROUTES} from "../utils/routes";
 
 export function RegistrationPage() {
 

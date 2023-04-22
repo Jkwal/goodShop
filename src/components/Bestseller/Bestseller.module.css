@@ -1,4 +1,4 @@
-.goodCategory {
+.bestsellers {
     padding: 1.5rem 2rem;
 
     display: flex;
@@ -6,34 +6,8 @@
     align-items: center;
 }
 
-.info{
-    margin-bottom: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .heading {
     margin-right: 15px;
 
     color: var(--dark-brown);
-
-}
-
-.subHeading {
-    font-size: 25px;
-    font-weight: bold;
-
-    color: var(--dark);
-}
-
-.subHeading:hover, .subHeading:focus{
-    color: var(--white);
-
-    transition: 0.4s;
-}
-
-.container{
-    justify-content: center;
 }

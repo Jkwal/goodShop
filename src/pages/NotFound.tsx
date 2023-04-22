@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {Button, Result} from 'antd';
 
-import {ROUTES} from "../utils";
+import {ROUTES} from "../utils/routes";
 
 
 export const NotFound = () => (

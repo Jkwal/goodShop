@@ -7,18 +7,18 @@ import {Space} from "antd/lib";
 import {useAppDispatch} from "hooks";
 import {loadProductsByCategory} from "store";
 
-import styles from './ListCategoryProducts.module.css';
+import styles from './Category.module.css';
 
 import {ProductCard} from "components/ProductCard";
-import {ButtonBack} from "../common";
+import {ButtonBack} from "../../common";
 import {getMenuData} from "../../store/categories/selectors";
 
-interface ListCategoryProductsProps {
+interface Category {
     withButtonBack: boolean;
     bestsellers: boolean
 }
 
-export const ListCategoryProducts: React.FC<ListCategoryProductsProps> = ({bestsellers, withButtonBack}) => {
+export const Category: React.FC<Category> = ({bestsellers, withButtonBack}) => {
 
     const {id} = useParams();
 

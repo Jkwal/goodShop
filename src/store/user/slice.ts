@@ -1,6 +1,6 @@
 import axios from "axios";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {BASE_URL} from "utils";
+import {BASE_URL} from "utils/baseURL";
 
 import {CurrentUser} from "../../types/currentUser";
 import {CartItem} from "../../types";

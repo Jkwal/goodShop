@@ -1,7 +1,7 @@
 import {Badge} from "antd";
 import {ShoppingTwoTone} from '@ant-design/icons';
 import {useSelector} from "react-redux";
-import {getCart, getIsAuth} from "../../store";
+import {getCart, getIsAuth} from "../store";
 
 export function Basket() {
 

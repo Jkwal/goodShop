@@ -2,13 +2,13 @@ import {Button} from 'antd';
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 
-import {ROUTES} from "utils";
+import {ROUTES} from "utils/routes";
 import styles from './Header.module.css'
 
 import {becomeAdmin, becomeUser, getIsAuth, getUser, logOut} from "../../store";
 import {useAppDispatch} from "../../hooks";
 
-import {ButtonAdminPanel, ButtonLogin, ButtonLogout, InputSearch, Logo, Basket} from "../common";
+import {ButtonAdminPanel, ButtonLogin, ButtonLogout, InputSearch, Logo, Basket} from "../../common";
 
 export const Header = () => {
 
@@ -78,7 +78,6 @@ export const Header = () => {
                     </Link>
 
             }
-
 
         </section>
     );

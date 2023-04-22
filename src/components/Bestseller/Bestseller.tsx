@@ -1,16 +1,15 @@
-import React, {useEffect} from "react";
+import {useEffect} from "react";
 
-import styles from 'components/Bestseller/Bestseller.module.css';
+import styles from './Bestseller.module.css';
 
-import {randomNumber} from "../../utils";
-import {useAppDispatch} from "../../hooks";
+import {randomNumber} from "utils/randomNumber";
+import {useAppDispatch} from "hooks";
 
-import {loadProductsByCategory} from "../../store";
-import {ListCategoryProducts} from "../ListCategoryProducts";
+import {loadProductsByCategory} from "store";
+import {Category} from "../Category";
 
 
 export const Bestseller = () => {
-
 
     const dispatch = useAppDispatch();
 
@@ -20,10 +19,10 @@ export const Bestseller = () => {
 
 
     return (
-        <section className={styles.goodCategory}>
+        <section className={styles.bestsellers}>
 
             <h2 className={styles.heading}>Bestsellers from </h2>
-            <ListCategoryProducts bestsellers={true} withButtonBack={false}/>
+            <Category bestsellers={true} withButtonBack={false}/>
 
         </section>
     )
