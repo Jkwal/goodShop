@@ -1,11 +1,14 @@
-import {ROUTES} from "../utils/routes";
+import {FC} from "react";
 import {Link} from "react-router-dom";
-import React from "react";
+
+import {ROUTES} from "utils/routes";
+
 
 interface LogoProps {
     className?: string;
 }
-export const Logo: React.FC<LogoProps> = ({className}) =>{
+
+export const Logo: FC<LogoProps> = ({className}) =>{
     return(
         <Link className={className} to={ROUTES.HOME}>
             GoodStore

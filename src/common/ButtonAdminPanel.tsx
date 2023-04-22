@@ -1,11 +1,18 @@
-import styles from "../components/Header/Header.module.css";
-import {ROUTES} from "../utils/routes";
+import {FC} from "react";
 import {Link} from "react-router-dom";
 
-export const ButtonAdminPanel = () => {
+import {ROUTES} from "utils/routes";
+
+
+interface ButtonAdminPanelProps {
+    className?: string;
+}
+
+
+export const ButtonAdminPanel:FC<ButtonAdminPanelProps> = ({className}) => {
     return (
         <Link
-            className={styles.goods}
+            className={className}
             to={ROUTES.GOODS}
         >
             Admin panel

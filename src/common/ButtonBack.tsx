@@ -1,7 +1,7 @@
-import React from "react";
+import {useNavigate} from "react-router-dom";
 
 import {Button} from "antd";
-import {useNavigate} from "react-router-dom";
+
 
 export const ButtonBack = () => {
 
@@ -10,5 +10,4 @@ export const ButtonBack = () => {
     return (
         <Button ghost onClick={() => navigate(-1)}>Back</Button>
     )
-
 }

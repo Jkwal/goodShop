@@ -1,16 +1,19 @@
 import {FC, MouseEvent} from "react";
-import {ROUTES} from "../utils/routes";
-import styles from "../components/Header/Header.module.css";
 import {NavLink} from "react-router-dom";
 
+import {ROUTES} from "utils/routes";
+
+
 interface ButtonLogoutProps {
+    className?: string;
     onClick: (event: MouseEvent<HTMLDivElement>) => void;
 }
 
-export const ButtonLogout: FC<ButtonLogoutProps> = ({onClick}) => {
+
+export const ButtonLogout: FC<ButtonLogoutProps> = ({className, onClick}) => {
     return (
         <NavLink to={ROUTES.LOGIN}>
-            <div className={styles.logout} onClick={onClick}>
+            <div className={className} onClick={onClick}>
                 Log out
             </div>
         </NavLink>

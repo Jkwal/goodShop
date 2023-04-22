@@ -30,7 +30,7 @@ export const Header = () => {
 
             {
                 user?.role === 'admin'
-                    ? <ButtonAdminPanel/>
+                    ? <ButtonAdminPanel className={styles.goods}/>
                     : null
             }
 
@@ -39,7 +39,7 @@ export const Header = () => {
 
             {
                 !isAuth
-                    ? <ButtonLogin/>
+                    ? <ButtonLogin className={styles.login}/>
                     : <>
                         {
                             isAuth
@@ -58,7 +58,7 @@ export const Header = () => {
                                 className={styles.avatar}></div>
                             <p className={styles.name}>{user.name}</p>
                         </div>
-                        <ButtonLogout onClick={handleLogOut}/>
+                        <ButtonLogout className={styles.logout} onClick={handleLogOut}/>
                     </>
             }
 
