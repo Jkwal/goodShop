@@ -25,16 +25,10 @@ li {
     background-color: var(--light-green);
 }
 
-.swiper {
-    max-height: 300px;
-}
-
 div.swiper-slide {
+    max-height: 350px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-img.ant-image-img{
-    object-fit: cover;
 }

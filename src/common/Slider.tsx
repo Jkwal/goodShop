@@ -29,8 +29,8 @@ export const Slider: FC<SliderProps> = ({slides, navigation}) => {
             }}
         >
             {
-                slides.map((slide: any) => (
-                    <SwiperSlide key={slide}>
+                slides.map((slide,index) => (
+                    <SwiperSlide key={index}>
                         <Image src={slide} alt={slide}/>
                     </SwiperSlide>
                 ))

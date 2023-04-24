@@ -1,4 +1,4 @@
-import {FC, MouseEvent} from "react";
+import {FC} from "react";
 import {NavLink} from "react-router-dom";
 
 import {ROUTES} from "utils";
