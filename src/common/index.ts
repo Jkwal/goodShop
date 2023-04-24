@@ -7,3 +7,4 @@ export {ButtonLogin} from './ButtonLogin';
 export {InputSearch} from './InputSearch';
 export {ButtonLogout} from './ButtonLogout';
 export {ButtonAdminPanel} from './ButtonAdminPanel';
+export {ButtonAddToBasket} from './ButtonAddToBasket';

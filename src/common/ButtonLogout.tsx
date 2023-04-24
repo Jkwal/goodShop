@@ -6,7 +6,7 @@ import {ROUTES} from "utils";
 
 interface ButtonLogoutProps {
     className?: string;
-    onClick: (event: MouseEvent<HTMLDivElement>) => void;
+    onClick: () => void;
 }
 
 

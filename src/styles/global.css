@@ -6,7 +6,7 @@
     font-family: 'Rubik', sans-serif;
 }
 
-a{
+a {
     text-decoration: none;
     font-weight: bold;
 
@@ -26,18 +26,15 @@ li {
 }
 
 .swiper {
-    height: 350px;
-
-    font-size: 36px;
-    font-weight: bold;
-
-    background-color: rgba(77, 77, 77, 0.94);
+    max-height: 300px;
 }
 
-div.swiper-slide{
+div.swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
-    border: 1px solid var(--dark);
+img.ant-image-img{
+    object-fit: cover;
 }
