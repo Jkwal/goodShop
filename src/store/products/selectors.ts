@@ -1,6 +1,6 @@
-import {RootStore} from '../store';
 import {State} from "./slice";
-import {LOAD_STATUSES} from "../../types";
+import {RootStore} from '../store';
+import {LOAD_STATUSES} from "types";
 
 export const getAllProducts = (store: RootStore): State['list'] => store.products.list;
 export const getSingleProduct = (store: RootStore): State['singleProduct'] => store.products.singleProduct;

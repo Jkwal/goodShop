@@ -45,7 +45,6 @@ const initialState: State = {
         id: 0,
         title: '',
         price: 0,
-
     },
     isLoading: false,
 }
