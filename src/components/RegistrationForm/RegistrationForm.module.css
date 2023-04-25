@@ -1,0 +1,14 @@
+.registrationForm {
+    padding: 10%;
+
+    border: var(--dark) 1px solid;
+    background-color: var(--light-green);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 40px;
+}
+

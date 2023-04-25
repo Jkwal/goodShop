@@ -1,9 +1,9 @@
-import {FC} from "react";
+import React, {FC} from "react";
 
 import {Input} from "antd";
 
 interface InputPasswordProps {
-    value: any;
+    value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 

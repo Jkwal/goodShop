@@ -3,20 +3,20 @@ import React, {FC} from "react";
 import {Input} from "antd";
 
 
-interface InputEmailProps {
+interface InputAvatarProps {
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 
-export const InputEmail: FC<InputEmailProps> = ({value, onChange}) => {
+export const InputAvatar: FC<InputAvatarProps> = ({value, onChange}) => {
     return (
         <Input style={{marginTop: '10px'}}
-               type="email"
-               name="email"
+               type="avatar"
+               name="avatar"
                size="large"
                value={value}
-               placeholder="Enter your email"
+               placeholder="Your avatar"
                onChange={onChange}
                autoComplete="off"
                required
