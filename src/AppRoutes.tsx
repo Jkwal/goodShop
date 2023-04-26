@@ -20,7 +20,7 @@ const AppRoutes = () => (
         <Route path={ROUTES.BASKET} element={<BasketPage/>}/>
         <Route path={ROUTES.LOGIN} element={<LoginPage/>}/>
         <Route path={ROUTES.REGISTRATION} element={<RegistrationPage/>}/>
-        <Route path={ROUTES.GOODS} element={<AdminPage/>}/>
+        <Route path={ROUTES.ADMIN} element={<AdminPage/>}/>
         <Route path='*' element={<NotFound/>}/>
     </Routes>
 );

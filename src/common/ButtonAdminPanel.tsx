@@ -13,7 +13,7 @@ export const ButtonAdminPanel:FC<ButtonAdminPanelProps> = ({className}) => {
     return (
         <Link
             className={className}
-            to={ROUTES.GOODS}
+            to={ROUTES.ADMIN}
         >
             Admin panel
         </Link>
