@@ -40,7 +40,7 @@ const columns = [
         title: 'Images',
         dataIndex: 'images',
         key: 'images',
-        render: (image:string)=> <Image src={image[0]} width={120} alt='good' />
+        render: (image: string) => <Image src={image[0]} width={120} alt='good'/>
     }
 ]
 
@@ -48,7 +48,9 @@ const columns = [
 export const AdminTable = () => {
 
     const productsAll = useSelector(getAllProducts);
-    const dataSource = productsAll.map(item=>({...item,key:item.id}))
+
+    const dataSource = productsAll.map(item => ({...item, key: item.id}))
+
     return (
         <Table
             columns={columns}

@@ -4,7 +4,7 @@ import {ROUTES} from "./utils";
 
 import {MainPage} from "./pages/MainPage";
 import {NotFound} from "./pages/NotFound";
-import {GoodsPage} from "./pages/GoodsPage";
+import {AdminPage} from "./pages/AdminPage";
 import {LoginPage} from "./pages/LoginPage";
 import {BasketPage} from "./pages/BasketPage";
 import {ProductPage} from "./pages/ProductPage";
@@ -20,7 +20,7 @@ const AppRoutes = () => (
         <Route path={ROUTES.BASKET} element={<BasketPage/>}/>
         <Route path={ROUTES.LOGIN} element={<LoginPage/>}/>
         <Route path={ROUTES.REGISTRATION} element={<RegistrationPage/>}/>
-        <Route path={ROUTES.GOODS} element={<GoodsPage/>}/>
+        <Route path={ROUTES.GOODS} element={<AdminPage/>}/>
         <Route path='*' element={<NotFound/>}/>
     </Routes>
 );

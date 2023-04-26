@@ -1,21 +1,11 @@
-import React, {useEffect} from "react";
-
 import {Col, Row} from "antd";
 import styles from 'styles/GoodsPage.module.css';
 
-import { loadProducts} from "store";
-import {useAppDispatch} from "hooks";
 import {AdminTable} from "components/AdminTable";
 
 
-export const GoodsPage = () => {
+export const AdminPage = () => {
 
-    const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        dispatch(loadProducts());
-
-    }, [dispatch])
 
     return (
         <section className={styles.goodsPage}>

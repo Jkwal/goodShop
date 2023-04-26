@@ -6,7 +6,7 @@ import {ShoppingTwoTone} from '@ant-design/icons';
 import {getCart, getIsAuth} from "store";
 
 
-export function Basket() {
+export function IconBasket() {
 
     const cart = useSelector(getCart)
     const isAuth = useSelector(getIsAuth)

@@ -7,7 +7,7 @@ import styles from './Header.module.css';
 import {ROUTES} from "utils";
 import {useAppDispatch} from "hooks";
 import {becomeAdmin, becomeUser, getIsAuth, getUser, logOut} from "store";
-import {ButtonAdminPanel, ButtonLogin, ButtonLogout, InputSearch, Logo, Basket} from "common";
+import {ButtonAdminPanel, ButtonLogin, ButtonLogout, InputSearch, Logo, IconBasket} from "common";
 
 
 export const Header = () => {
@@ -68,13 +68,13 @@ export const Header = () => {
                         className={styles.basket}
                         to={ROUTES.LOGIN}
                     >
-                        <Basket/>
+                        <IconBasket/>
                     </Link>
                     : <Link
                         className={styles.basket}
                         to={ROUTES.BASKET}
                     >
-                        <Basket/>
+                        <IconBasket/>
                     </Link>
 
             }
