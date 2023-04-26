@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/goodShop/static/css/main.d6f0f6ad.css",
-    "main.js": "/goodShop/static/js/main.6393e565.js",
+    "main.css": "/goodShop/static/css/main.54125928.css",
+    "main.js": "/goodShop/static/js/main.d1634480.js",
     "index.html": "/goodShop/index.html",
     "static/media/index.cjs": "/goodShop/static/media/index.1958de0a250480972d40.cjs",
-    "main.d6f0f6ad.css.map": "/goodShop/static/css/main.d6f0f6ad.css.map",
-    "main.6393e565.js.map": "/goodShop/static/js/main.6393e565.js.map"
+    "main.54125928.css.map": "/goodShop/static/css/main.54125928.css.map",
+    "main.d1634480.js.map": "/goodShop/static/js/main.d1634480.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6f0f6ad.css",
-    "static/js/main.6393e565.js"
+    "static/css/main.54125928.css",
+    "static/js/main.d1634480.js"
   ]
 }
