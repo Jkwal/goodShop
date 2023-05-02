@@ -3,6 +3,7 @@ import {useState} from "react";
 import {Card, Image} from 'antd';
 import styles from './ProductCard.module.css';
 
+import {Price} from "common";
 import {Product} from "types";
 import {fallbackImage, noImage} from "utils/imageError";
 
@@ -32,7 +33,11 @@ export function ProductCard({title, images, price}: Product) {
 
             <div className={styles.info}>
                 <h3 className={styles.title}>{title}</h3>
-                <p className={styles.price}>{`${price}$`}</p>
+                <p className={styles.price}>
+                    {
+                        <Price price={price}/>
+                    }
+                </p>
             </div>
         </Card>
     );

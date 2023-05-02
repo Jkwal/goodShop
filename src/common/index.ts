@@ -1,4 +1,5 @@
 export {Logo} from './Logo';
+export {Price} from './Price';
 export {Loader} from './Loader';
 export {Slider} from './Slider';
 export {ButtonPay} from './ButtonPay';

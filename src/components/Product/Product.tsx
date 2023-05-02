@@ -6,7 +6,7 @@ import styles from './Product.module.css';
 import {message} from "antd";
 
 import {useAppDispatch} from "hooks";
-import {ButtonAddToBasket, ButtonBack, Slider} from "common";
+import {ButtonAddToBasket, ButtonBack, Price, Slider} from "common";
 import {addItemToCart, getIsAuth, getSingleProduct, loadSingleProduct} from "store";
 
 
@@ -70,7 +70,9 @@ export const Product = () => {
                                 : <ButtonAddToBasket className={styles.button} onClick={addToCart} disabled={true}/>
                         }
 
-                        <p className={styles.price}>{price}$</p>
+                        <p className={styles.price}>
+                            <Price price={price}/>
+                        </p>
                     </div>
                 </div>
 
